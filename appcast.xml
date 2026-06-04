@@ -6,6 +6,13 @@
     <description>Most recent MEGAKILL updates</description>
     <language>en</language>
     <item>
+      <title>Version 0.1.2</title>
+      <description><![CDATA[<h2>MEGAKILL 0.1.2</h2><ul><li>New end-of-trial paywall screen — buy or paste your license key in one place (landing-styled)</li></ul>]]></description>
+      <pubDate>Thu, 04 Jun 2026 20:45:40 +0200</pubDate>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/arturogj92/megakill-site/releases/download/v0.1.2/MEGAKILL-v0.1.2-macOS.zip" sparkle:version="3" sparkle:shortVersionString="0.1.2" length="3963345" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Version 0.1.1</title>
       <description><![CDATA[<h2>MEGAKILL 0.1.1</h2><ul><li>New first-run onboarding wizard (the landing-style how-to)</li><li>Wound mode: shoot an app's window to close just that window, keep the app running</li><li>Default shortcut is now ⌥⌘ (Option-Command)</li><li>Fixed the app icon</li></ul>]]></description>
       <pubDate>Thu, 04 Jun 2026 20:33:31 +0200</pubDate>
