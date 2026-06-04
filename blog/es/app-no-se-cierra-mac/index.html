@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Una app no se cierra en Mac: cómo forzar el cierre · MEGAKILL</title>
+<meta name="description" content="¿Una app no se cierra en Mac y se queda colgada con la pelota de playa? Te enseño la escalera de soluciones, de ⌘Q a Terminal, paso a paso y en orden.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a0706">
+<link rel="canonical" href="https://megakill.app/blog/es/app-no-se-cierra-mac/">
+<link rel="alternate" hreflang="en" href="https://megakill.app/blog/app-wont-quit-mac/">
+<link rel="alternate" hreflang="es" href="https://megakill.app/blog/es/app-no-se-cierra-mac/">
+<link rel="alternate" hreflang="x-default" href="https://megakill.app/blog/app-wont-quit-mac/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Chakra+Petch:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MEGAKILL">
+<meta property="og:title" content="Una app no se cierra en Mac: cómo forzar el cierre">
+<meta property="og:description" content="¿Una app no se cierra en Mac y se queda colgada con la pelota de playa? Te enseño la escalera de soluciones, de ⌘Q a Terminal, paso a paso y en orden.">
+<meta property="og:url" content="https://megakill.app/blog/es/app-no-se-cierra-mac/">
+<meta property="og:image" content="https://megakill.app/og-image.png">
+<meta property="og:locale" content="es">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Una app no se cierra en Mac: cómo forzar el cierre">
+<meta name="twitter:description" content="¿Una app no se cierra en Mac y se queda colgada con la pelota de playa? Te enseño la escalera de soluciones, de ⌘Q a Terminal, paso a paso y en orden.">
+<meta name="twitter:image" content="https://megakill.app/og-image.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Qué hacer cuando una app no se cierra en Mac", "description": "¿Una app no se cierra en Mac y se queda colgada con la pelota de playa? Te enseño la escalera de soluciones, de ⌘Q a Terminal, paso a paso y en orden.", "image": "https://megakill.app/og-image.png", "inLanguage": "es", "author": {"@type": "Organization", "name": "MEGAKILL"}, "publisher": {"@type": "Organization", "name": "MEGAKILL"}, "datePublished": "2026-06-04", "dateModified": "2026-06-04", "mainEntityOfPage": "https://megakill.app/blog/es/app-no-se-cierra-mac/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://megakill.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://megakill.app/blog/es/"}, {"@type": "ListItem", "position": 3, "name": "Qué hacer cuando una app no se cierra en Mac", "item": "https://megakill.app/blog/es/app-no-se-cierra-mac/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Pierdo mi trabajo si fuerzo el cierre de una app en Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, pierdes los cambios sin guardar de esa app concreta. Forzar la salida mata el proceso sin darle tiempo a guardar. El resto del sistema y las demás apps no se ven afectados. Por eso conviene intentar primero salir con normalidad (⌘Q)."}}, {"@type": "Question", "name": "¿Cuál es el atajo para forzar el cierre en Mac?", "acceptedAnswer": {"@type": "Answer", "text": "⌥⌘⎋ (Opción-Comando-Escape) abre la ventana \"Forzar salida de aplicaciones\". Seleccionas la app que no responde y pulsas Forzar salida. Es el método más usado y el más seguro."}}, {"@type": "Question", "name": "¿Qué hago si la app no aparece en la ventana de Forzar salida?", "acceptedAnswer": {"@type": "Answer", "text": "Abre el Monitor de Actividad (Aplicaciones > Utilidades), busca el proceso por su nombre en la pestaña CPU y púlsalo con el botón X para forzar su salida. Si tampoco está, usa Terminal con killall o kill -9 sobre su PID."}}, {"@type": "Question", "name": "¿Es seguro usar kill -9 en la Terminal?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, pero es la opción más drástica: el proceso muere al instante sin guardar nada. Úsalo solo cuando ⌘Q, ⌥⌘⎋, el Dock y el Monitor de Actividad no hayan funcionado. Asegúrate de matar el PID correcto."}}, {"@type": "Question", "name": "¿Por qué aparece la pelota de playa girando?", "acceptedAnswer": {"@type": "Answer", "text": "Significa que la app dejó de responder al sistema: está bloqueada en una tarea pesada, sin memoria o con un fallo interno. macOS le pide acciones y ella no contesta. Cuando pasa, salir con ⌘Q no sirve y hay que forzar la salida."}}]}</script>
+</head>
+<body>
+<header class="hud"><div class="bar"><a class="brand" href="/">MEGA<i>KILL</i></a><span class="spacer"></span><a class="cta" style="background:transparent;box-shadow:none;border:2px solid #5c4230;color:#bdac8a;margin-right:8px" href="https://megakill.app/blog/app-wont-quit-mac/">EN</a><a class="cta" href="https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip">Descargar gratis</a></div></header>
+<main class="wrap">
+<article>
+  <nav class="crumbs"><a href="/">Inicio</a> / <a href="https://megakill.app/blog/es/">Blog</a> / Qué hacer cuando una app no se cierra en Mac</nav>
+  <h1>Qué hacer cuando una app no se cierra en Mac</h1>
+  <div class="meta">Guía de macOS · Actualizado junio 2026</div>
+  <p>Una app no se cierra en Mac y la rueda de colores no para de girar. Pulsas <kbd>⌘Q</kbd> y no pasa nada. Es de lo más normal y casi siempre tiene arreglo en segundos.</p><p>Aquí tienes una escalera de soluciones, de la más suave a la más contundente. Empieza por arriba y baja solo si la anterior no funciona. Así cierras la app sin reiniciar el Mac y sin perder más trabajo del necesario.</p>
+  
+<h2>Por qué se cuelga una app (la pelota de playa)</h2>
+<p>Cuando ves el cursor convertido en una rueda de colores girando (la famosa "pelota de playa"), significa que la app dejó de responder al sistema. macOS le envía órdenes y ella no contesta a tiempo.</p><p>Las causas habituales:</p><ul><li>La app está haciendo una tarea pesada y se ha quedado bloqueada esperando algo.</li><li>Se ha quedado sin memoria o pelea por un recurso del disco o de la red.</li><li>Un fallo interno (un proceso en bucle, un archivo corrupto que intenta abrir).</li></ul><p>Salir con normalidad (<kbd>⌘Q</kbd>) le pide a la app que cierre ella misma de forma ordenada. Si está colgada, ni se entera. Por eso necesitas "forzar la salida": ahí es el sistema quien mata el proceso, sin pedirle permiso a la app.</p>
+<h2>Paso 1: intenta salir con normalidad (⌘Q)</h2>
+<p>Antes de nada, descarta lo fácil. Haz clic en la ventana de la app para llevar el foco a ella y pulsa <kbd>⌘Q</kbd>. Si tiene un cuadro de diálogo abierto esperando ("¿Guardar cambios?"), puede que no cierre hasta que respondas.</p><ol><li>Selecciona la app (clic en su ventana o en su icono del Dock).</li><li>Pulsa <kbd>⌘Q</kbd> para Salir.</li><li>Si aparece un aviso de guardar, respóndelo.</li></ol><p>Si la app responde, perfecto: cierra bien y conservas tu trabajo. Si no pasa nada o ves la pelota de playa, pasa al siguiente paso.</p>
+<h2>Paso 2: ventana Forzar salida (⌥⌘⎋)</h2>
+<p>Este es el método clásico y el que deberías usar el 90% de las veces. Abre la ventana "Forzar salida de aplicaciones".</p><ol><li>Pulsa <kbd>⌥⌘⎋</kbd> (Opción-Comando-Escape) a la vez. También puedes ir al menú Apple () y elegir <strong>Forzar salida</strong>.</li><li>En la lista, selecciona la app que no responde. Suele aparecer marcada en rojo con un "(no responde)" al lado.</li><li>Pulsa el botón <strong>Forzar salida</strong> y confirma.</li></ol><p>Esto mata la app al instante. Perderás los cambios sin guardar de esa app, pero el resto del sistema sigue intacto. Es seguro y no afecta a otras apps.</p>
+<h2>Paso 3: clic derecho en el Dock + tecla Opción</h2>
+<p>Otra vía igual de rápida, sin abrir ninguna ventana. Va directa al icono del Dock.</p><ol><li>Haz <strong>clic derecho</strong> (o Control-clic) en el icono de la app en el Dock.</li><li>En el menú verás la opción <strong>Salir</strong>. Mantén pulsada la tecla <kbd>⌥</kbd> (Opción): "Salir" cambia a <strong>Forzar salida</strong>.</li><li>Haz clic en <strong>Forzar salida</strong>.</li></ol><p>Si la app está tan colgada que su menú del Dock tampoco responde, no te preocupes: tienes más opciones abajo.</p>
+<h2>Paso 4: Monitor de Actividad</h2>
+<p>El Monitor de Actividad es el administrador de procesos de macOS. Sirve cuando una app no aparece en el Dock, cuando un proceso en segundo plano consume el 100% de CPU, o cuando los pasos anteriores no han funcionado.</p><ol><li>Ábrelo desde <strong>Aplicaciones &gt; Utilidades &gt; Monitor de Actividad</strong>, o búscalo con Spotlight (<kbd>⌘Espacio</kbd>).</li><li>En la pestaña <strong>CPU</strong>, busca la app por su nombre. Los procesos que no responden salen en rojo.</li><li>Selecciónala y pulsa el botón <strong>X</strong> (octágono) de la esquina superior izquierda.</li><li>Elige <strong>Salir</strong> y, si no cierra, <strong>Forzar salida</strong>.</li></ol><p>Te da más información (cuánta CPU y memoria usa cada proceso), así que también te ayuda a entender qué está pasando antes de matarlo.</p>
+<h2>Paso 5: Terminal (killall, kill -9) y último recurso</h2>
+<p>El recurso para cuando nada de lo anterior responde. Abre Terminal desde <strong>Aplicaciones &gt; Utilidades &gt; Terminal</strong>.</p><p>Primero, mata la app por su nombre:</p><ul><li><kbd>killall "Nombre de la App"</kbd></li></ul><p>El nombre tiene que ser exacto. Por ejemplo, <kbd>killall Safari</kbd> o <kbd>killall "Google Chrome"</kbd> (con comillas si lleva espacios). Si sigue sin caer, ve al proceso por su PID:</p><ol><li>Localiza el PID con <kbd>pgrep -fl Safari</kbd>, que te da el número y el nombre.</li><li>Mátalo a la fuerza con <kbd>kill -9 PID</kbd> (sustituye PID por ese número).</li></ol><p>El <kbd>-9</kbd> es la señal más dura: el proceso muere de golpe, sin guardar nada. Y si ni eso funciona, queda el último recurso: <strong>menú Apple () &gt; Reiniciar</strong>. Si el menú tampoco responde, mantén pulsado el botón de encendido unos 10 segundos hasta que el Mac se apague y vuelve a encenderlo. Si una app concreta se cuelga siempre, actualízala o reinstálala.</p>
+<h2>La forma instantánea (y divertida) de cerrar apps</h2>
+<p>Si fuerzas el cierre a menudo, hay un atajo mucho más rápido y con más gracia. <strong>MEGAKILL</strong> es una app de la barra de menús que convierte el cerrar apps en un disparo: mantienes un atajo (<kbd>⌃⌥⌘</kbd> por defecto), el cursor se vuelve una escopeta estilo DOOM y disparas al icono del Dock de la app o a su ventana. Se cierra al instante, con efecto, sonido y rachas de bajas.</p><p>Por detrás hace lo mismo que "Forzar salida" (mata el proceso colgado), pero en un gesto y sin abrir ninguna ventana ni Terminal. La escopeta es de doble cañón: dos disparos y recargas con clic derecho. Funciona en macOS 14 o superior.</p>
+
+  <div class="cta-box">
+    <h3>Forzar el cierre, a lo bestia</h3>
+    <p>Deja de pelear con ventanas y menús. Con <strong>MEGAKILL</strong> apuntas, disparas y la app colgada cae al instante, con escopeta de DOOM, sonido y rachas de bajas. Gratis para probar (100 bajas), luego 1,99 € pago único para disparos ilimitados. macOS 14+, fuera de la App Store. Échale el guante en <strong>megakill.app</strong> y conviértete en el verdugo de tus apps colgadas.</p>
+    <a class="btn" href="https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip">Descargar MEGAKILL — gratis</a>
+  </div>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+  <details><summary>¿Pierdo mi trabajo si fuerzo el cierre de una app en Mac?</summary><p>Sí, pierdes los cambios sin guardar de esa app concreta. Forzar la salida mata el proceso sin darle tiempo a guardar. El resto del sistema y las demás apps no se ven afectados. Por eso conviene intentar primero salir con normalidad (⌘Q).</p></details>
+  <details><summary>¿Cuál es el atajo para forzar el cierre en Mac?</summary><p>⌥⌘⎋ (Opción-Comando-Escape) abre la ventana &quot;Forzar salida de aplicaciones&quot;. Seleccionas la app que no responde y pulsas Forzar salida. Es el método más usado y el más seguro.</p></details>
+  <details><summary>¿Qué hago si la app no aparece en la ventana de Forzar salida?</summary><p>Abre el Monitor de Actividad (Aplicaciones &gt; Utilidades), busca el proceso por su nombre en la pestaña CPU y púlsalo con el botón X para forzar su salida. Si tampoco está, usa Terminal con killall o kill -9 sobre su PID.</p></details>
+  <details><summary>¿Es seguro usar kill -9 en la Terminal?</summary><p>Sí, pero es la opción más drástica: el proceso muere al instante sin guardar nada. Úsalo solo cuando ⌘Q, ⌥⌘⎋, el Dock y el Monitor de Actividad no hayan funcionado. Asegúrate de matar el PID correcto.</p></details>
+  <details><summary>¿Por qué aparece la pelota de playa girando?</summary><p>Significa que la app dejó de responder al sistema: está bloqueada en una tarea pesada, sin memoria o con un fallo interno. macOS le pide acciones y ella no contesta. Cuando pasa, salir con ⌘Q no sirve y hay que forzar la salida.</p></details>
+  </section>
+</article>
+</main>
+<footer><div class="wrap"><p class="small">MEGAKILL es una app de barra de menús para macOS que fuerza el cierre de apps disparándoles. Un homenaje a DOOM (1993, id Software); sin afiliación con id Software ni ZeniMax.</p><div><a href="/">megakill.app</a> &nbsp;·&nbsp; <a href="/blog/">Blog</a></div></div></footer>
+</body>
+</html>
