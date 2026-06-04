@@ -761,19 +761,19 @@ footer .brand b{font-size:16px}
 .activate h2{font-size:clamp(2rem,5.5vw,3.4rem);margin:14px 0 10px}
 .activate .lead{margin:0 auto 26px;text-align:center}
 .activate .lead b{color:var(--ember)}
-.kbd-stage{position:relative;width:100%;max-width:680px;margin:0 auto;padding:64px 0 6px}
-.kbd-gun{position:absolute;left:50%;top:0;width:230px;z-index:3;pointer-events:none;
-  opacity:0;transform:translate(-50%,16px) rotate(-7deg) scale(.45);
-  filter:drop-shadow(0 0 6px rgba(255,200,120,.7)) drop-shadow(0 0 16px rgba(255,90,20,.5)) drop-shadow(0 10px 12px rgba(0,0,0,.6))}
-.kbd-stage.go .kbd-gun{animation:kgun 1s cubic-bezier(.2,.9,.3,1) forwards}
-@keyframes kgun{0%{opacity:0;transform:translate(-50%,16px) rotate(-7deg) scale(.4)}
-  55%{opacity:1;transform:translate(-50%,-14px) rotate(-7deg) scale(.74)}
-  100%{opacity:1;transform:translate(-50%,-10px) rotate(-7deg) scale(.7)}}
-.kbd-flash{position:absolute;left:64%;top:34px;width:130px;height:130px;transform:translate(-50%,-50%);
-  z-index:2;opacity:0;pointer-events:none;
+.kbd-stage{position:relative;width:100%;max-width:680px;margin:0 auto;padding:100px 0 6px}
+/* the real DOOM shotgun sprite (same as the demo) floats above the keyboard, recoils on fire */
+.kbd-gun-wrap{position:absolute;left:50%;top:8px;transform:translateX(-50%);z-index:3;pointer-events:none;line-height:0;
+  animation:kgfloat 3.2s ease-in-out infinite}
+@keyframes kgfloat{0%,100%{transform:translateX(-50%) translateY(0) rotate(-1deg)}50%{transform:translateX(-50%) translateY(-9px) rotate(1deg)}}
+.kbd-gun{display:block;width:210px;image-rendering:pixelated;
+  filter:drop-shadow(0 0 4px rgba(255,200,120,.85)) drop-shadow(0 0 14px rgba(255,90,20,.55)) drop-shadow(0 9px 9px rgba(0,0,0,.7))}
+.kbd-stage.go .kbd-gun{animation:kgkick .22s ease-out}
+@keyframes kgkick{0%{transform:translate(0,0) rotate(0)}40%{transform:translate(-22px,8px) rotate(-7deg)}100%{transform:translate(0,0)}}
+.kbd-flash{position:absolute;right:-44px;top:46%;width:150px;height:150px;transform:translate(0,-50%);z-index:-1;opacity:0;pointer-events:none;
   background:radial-gradient(circle,#fff 0 10%,var(--ember) 22%,var(--hellfire) 42%,rgba(207,23,23,.5) 60%,transparent 72%)}
-.kbd-stage.go .kbd-flash{animation:kflash .5s ease-out .4s}
-@keyframes kflash{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}24%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(1.9)}}
+.kbd-stage.go .kbd-flash{animation:kflash .32s ease-out}
+@keyframes kflash{0%{opacity:0;transform:translate(0,-50%) scale(.3)}30%{opacity:1}100%{opacity:0;transform:translate(0,-50%) scale(1.7)}}
 .keyboard{position:relative;z-index:1;display:flex;gap:7px;justify-content:center;align-items:stretch;flex-wrap:nowrap;
   padding:14px;border:2px solid #000;border-radius:16px;max-width:100%;
   background:linear-gradient(180deg,#2a2420,#14100d);
@@ -794,12 +794,12 @@ footer .brand b{font-size:16px}
 .kbd-cta{margin-top:26px}
 .kbd-cta .btn{cursor:pointer}
 @media(max-width:680px){
-  .kbd-stage{padding-top:52px}
+  .kbd-stage{padding-top:84px}
   .key{min-width:40px;height:50px;font-size:8px;padding:6px}
   .key .glyph{font-size:13px}
   .key.space{min-width:64px}
   .kbd-gun{width:150px}
-  .kbd-flash{width:96px;height:96px}
+  .kbd-flash{width:104px;height:104px;right:-28px}
 }
 
 /* ============================================================
@@ -1216,8 +1216,7 @@ footer .brand b{font-size:16px}
     <p class="lead" data-es="Mantén pulsadas <b>⌥ Opción</b> y <b>⌘ Comando</b> y el cursor se convierte en una escopeta. Suéltalas y todo vuelve a la normalidad.">Hold <b>⌥ Option</b> and <b>⌘ Command</b> and your cursor turns into a shotgun. Let go and it's back to normal.</p>
 
     <div class="kbd-stage" id="kbdStage">
-      <img class="kbd-gun" src="assets/shotgun.png" alt="MEGAKILL shotgun cursor">
-      <div class="kbd-flash" aria-hidden="true"></div>
+      <div class="kbd-gun-wrap"><img class="kbd-gun" src="assets/shotgun-doom.png" alt="MEGAKILL shotgun cursor"><div class="kbd-flash" aria-hidden="true"></div></div>
       <div class="keyboard" role="img" aria-label="Mac keyboard bottom row with Option and Command held">
         <div class="key"><span class="glyph" style="font-size:11px">fn</span></div>
         <div class="key"><span>control</span><span class="glyph">⌃</span></div>
