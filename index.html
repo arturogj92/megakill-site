@@ -754,6 +754,55 @@ footer .brand b{font-size:16px}
 .small{font-size:.8rem;color:var(--muted);margin-top:22px;max-width:60ch}
 
 /* ============================================================
+   HOW TO ACTIVATE — Mac keyboard widget
+   ============================================================ */
+.activate{padding:var(--sect) 0;background:linear-gradient(180deg,transparent,rgba(122,12,12,.05),transparent)}
+.activate .container{text-align:center;display:flex;flex-direction:column;align-items:center}
+.activate h2{font-size:clamp(2rem,5.5vw,3.4rem);margin:14px 0 10px}
+.activate .lead{margin:0 auto 26px;text-align:center}
+.activate .lead b{color:var(--ember)}
+.kbd-stage{position:relative;width:100%;max-width:680px;margin:0 auto;padding:64px 0 6px}
+.kbd-gun{position:absolute;left:50%;top:0;width:230px;z-index:3;pointer-events:none;
+  opacity:0;transform:translate(-50%,16px) rotate(-7deg) scale(.45);
+  filter:drop-shadow(0 0 6px rgba(255,200,120,.7)) drop-shadow(0 0 16px rgba(255,90,20,.5)) drop-shadow(0 10px 12px rgba(0,0,0,.6))}
+.kbd-stage.go .kbd-gun{animation:kgun 1s cubic-bezier(.2,.9,.3,1) forwards}
+@keyframes kgun{0%{opacity:0;transform:translate(-50%,16px) rotate(-7deg) scale(.4)}
+  55%{opacity:1;transform:translate(-50%,-14px) rotate(-7deg) scale(.74)}
+  100%{opacity:1;transform:translate(-50%,-10px) rotate(-7deg) scale(.7)}}
+.kbd-flash{position:absolute;left:64%;top:34px;width:130px;height:130px;transform:translate(-50%,-50%);
+  z-index:2;opacity:0;pointer-events:none;
+  background:radial-gradient(circle,#fff 0 10%,var(--ember) 22%,var(--hellfire) 42%,rgba(207,23,23,.5) 60%,transparent 72%)}
+.kbd-stage.go .kbd-flash{animation:kflash .5s ease-out .4s}
+@keyframes kflash{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}24%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(1.9)}}
+.keyboard{position:relative;z-index:1;display:flex;gap:7px;justify-content:center;align-items:stretch;flex-wrap:nowrap;
+  padding:14px;border:2px solid #000;border-radius:16px;max-width:100%;
+  background:linear-gradient(180deg,#2a2420,#14100d);
+  box-shadow:0 8px 0 #000,inset 0 1px 0 rgba(255,255,255,.05),0 24px 50px rgba(0,0,0,.5)}
+.key{flex:0 0 auto;min-width:50px;height:56px;border-radius:9px;
+  background:linear-gradient(180deg,#3b3531,#221c18);border:1px solid #000;
+  box-shadow:0 3px 0 #000,inset 0 1px 0 rgba(255,255,255,.09);
+  display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;
+  padding:7px 8px;color:#c9bba1;font-family:var(--font-body);font-size:10px;line-height:1;
+  transition:transform .09s,box-shadow .09s,background .14s,color .14s;-webkit-user-select:none;user-select:none}
+.key .glyph{align-self:flex-end;font-size:16px;color:#e7d9bd}
+.key.space{flex:1 1 auto;min-width:130px}
+.key.hot{border-color:var(--border-bright)}
+.key.press{transform:translateY(3px);
+  box-shadow:0 0 0 #000,inset 0 2px 7px rgba(0,0,0,.55);
+  background:linear-gradient(180deg,var(--blood-bright),var(--blood-deep));color:#fff7ec}
+.key.press .glyph{color:#fff;text-shadow:0 0 8px rgba(255,200,150,.8)}
+.kbd-cta{margin-top:26px}
+.kbd-cta .btn{cursor:pointer}
+@media(max-width:680px){
+  .kbd-stage{padding-top:52px}
+  .key{min-width:40px;height:50px;font-size:8px;padding:6px}
+  .key .glyph{font-size:13px}
+  .key.space{min-width:64px}
+  .kbd-gun{width:150px}
+  .kbd-flash{width:96px;height:96px}
+}
+
+/* ============================================================
    MOBILE / TOUCH
    ============================================================ */
 @media(max-width:760px){
@@ -1159,6 +1208,33 @@ footer .brand b{font-size:16px}
   </div>
 </section>
 
+<!-- ====================== HOW TO ACTIVATE (Mac keyboard) ====================== -->
+<section class="activate" id="activate" data-od-id="activate">
+  <div class="container">
+    <span class="eyebrow has-ico"><svg class="eb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg><span data-es="Cómo se activa">How to activate</span></span>
+    <h2 class="metal" data-es="Dos teclas. En cualquier sitio.">Two keys. Anywhere.</h2>
+    <p class="lead" data-es="Mantén pulsadas <b>⌥ Opción</b> y <b>⌘ Comando</b> y el cursor se convierte en una escopeta. Suéltalas y todo vuelve a la normalidad.">Hold <b>⌥ Option</b> and <b>⌘ Command</b> and your cursor turns into a shotgun. Let go and it's back to normal.</p>
+
+    <div class="kbd-stage" id="kbdStage">
+      <img class="kbd-gun" src="assets/shotgun.png" alt="MEGAKILL shotgun cursor">
+      <div class="kbd-flash" aria-hidden="true"></div>
+      <div class="keyboard" role="img" aria-label="Mac keyboard bottom row with Option and Command held">
+        <div class="key"><span class="glyph" style="font-size:11px">fn</span></div>
+        <div class="key"><span>control</span><span class="glyph">⌃</span></div>
+        <div class="key hot" data-k="opt"><span>option</span><span class="glyph">⌥</span></div>
+        <div class="key hot" data-k="cmd"><span>command</span><span class="glyph">⌘</span></div>
+        <div class="key space"></div>
+        <div class="key"><span>command</span><span class="glyph">⌘</span></div>
+        <div class="key"><span>option</span><span class="glyph">⌥</span></div>
+      </div>
+    </div>
+
+    <div class="kbd-cta">
+      <button class="btn btn-primary" id="kbdPlay" type="button"><span class="btn-row" data-es="Mostrar cómo se activa">Show me how</span></button>
+    </div>
+  </div>
+</section>
+
 <!-- ====================== HOW IT WORKS ====================== -->
 <section class="how" id="como" data-od-id="how">
   <div class="container">
@@ -1169,7 +1245,7 @@ footer .brand b{font-size:16px}
         <span class="num">01</span>
         <span class="tag" data-es="INVOCA">SUMMON</span>
         <h3 data-es="Pulsa el atajo">Hit the shortcut</h3>
-        <p data-es="Mantén tu combo de teclas (⌃⌥⌘ por defecto). El cursor se convierte en una escopeta sobre cualquier pantalla. Estás armado.">Hold your modifier combo (⌃⌥⌘ by default). The cursor turns into a shotgun over any screen. You're armed.</p>
+        <p data-es="Mantén tu combo de teclas (⌥⌘ por defecto). El cursor se convierte en una escopeta sobre cualquier pantalla. Estás armado.">Hold your modifier combo (⌥⌘ by default). The cursor turns into a shotgun over any screen. You're armed.</p>
       </article>
       <article class="step">
         <span class="num">02</span>
@@ -1955,6 +2031,35 @@ footer .brand b{font-size:16px}
 
   // init
   buildDock(); renderAmmo();
+})();
+</script>
+
+<!-- ====================== KEYBOARD "HOW TO ACTIVATE" ====================== -->
+<script>
+(function(){
+  var stage = document.getElementById('kbdStage');
+  if(!stage) return;
+  var btn = document.getElementById('kbdPlay');
+  var hot = stage.querySelectorAll('.key.hot');
+  var playing = false;
+  function play(userGesture){
+    if(playing) return; playing = true;
+    for(var i=0;i<hot.length;i++) hot[i].classList.add('press');
+    stage.classList.add('go');
+    if(userGesture){ try{ var a = new Audio('assets/sounds/fire.mp3'); a.volume = .5; a.play().catch(function(){}); }catch(e){} }
+    setTimeout(function(){
+      for(var i=0;i<hot.length;i++) hot[i].classList.remove('press');
+      stage.classList.remove('go');
+      playing = false;
+    }, 1350);
+  }
+  if(btn) btn.addEventListener('click', function(){ play(true); });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ play(false); io.disconnect(); } });
+    }, { threshold: 0.5 });
+    io.observe(stage);
+  }
 })();
 </script>
 
