@@ -1,0 +1,97 @@
+/* ============================================================
+   MEGAKILL BLOG — DOOM-lite theme (shares the landing's tokens)
+   ============================================================ */
+:root{
+  --bg:#0a0706; --surface:#16100d; --surface-2:#221813; --panel:#1a120e;
+  --fg:#ece0c8; --fg-dim:#bdac8a; --muted:#8a7a62; --border:#3a2a1e; --border-bright:#5c4230;
+  --blood:#cf1717; --blood-deep:#7a0c0c; --blood-bright:#ff2a2a; --hellfire:#ff7a18; --ember:#ffb423; --toxic:#62d22e;
+  --font-display:"Black Ops One","Arial Black",system-ui,sans-serif;
+  --font-pixel:"Press Start 2P",ui-monospace,monospace;
+  --font-body:"Chakra Petch",system-ui,sans-serif;
+  --max:760px; --gut:clamp(16px,4vw,28px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(120% 50% at 50% -10%, rgba(207,23,23,.10), transparent 55%),
+    var(--bg);
+  color:var(--fg);font-family:var(--font-body);font-size:clamp(16px,1.1vw,18px);line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;mix-blend-mode:overlay;opacity:.04;
+  background:repeating-linear-gradient(to bottom,#fff 0 1px,transparent 1px 3px)}
+a{color:var(--ember);text-decoration:none}
+a:hover{color:var(--hellfire);text-decoration:underline}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gut);position:relative;z-index:2}
+
+/* ---- header / nav ---- */
+.hud{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#120c09,#0c0807);
+  border-bottom:2px solid #000;box-shadow:0 2px 0 var(--blood-deep)}
+.hud .bar{max-width:980px;margin-inline:auto;padding:0 var(--gut);display:flex;align-items:center;gap:14px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);font-family:var(--font-display);font-size:20px;letter-spacing:.02em}
+.brand i{color:var(--blood);font-style:normal}
+.brand img{width:40px;height:40px;border-radius:9px;filter:drop-shadow(0 0 6px rgba(207,23,23,.45))}
+.hud .spacer{margin-left:auto}
+.hud a.cta{font-family:var(--font-pixel);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#fff7ec;
+  background:linear-gradient(180deg,var(--blood-bright),var(--blood) 55%,var(--blood-deep));
+  border:2px solid #000;box-shadow:0 4px 0 #3a0404;padding:11px 14px}
+.hud a.cta:hover{text-decoration:none;transform:translateY(-1px)}
+
+/* ---- article ---- */
+article{padding:clamp(28px,6vw,56px) 0}
+.crumbs{font-family:var(--font-pixel);font-size:9px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-bottom:22px}
+.crumbs a{color:var(--muted)}
+article h1{font-family:var(--font-display);font-weight:400;text-transform:uppercase;line-height:1.05;
+  font-size:clamp(2rem,6vw,3.1rem);margin-bottom:10px;
+  text-shadow:0 2px 0 #2a0606,0 4px 10px rgba(207,23,23,.3)}
+.meta{font-family:var(--font-pixel);font-size:9px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-bottom:28px}
+article h2{font-family:var(--font-display);font-weight:400;text-transform:uppercase;color:var(--fg);
+  font-size:clamp(1.4rem,3.6vw,1.9rem);line-height:1.15;margin:38px 0 12px;
+  border-left:4px solid var(--blood);padding-left:12px}
+article h3{font-size:1.15rem;color:var(--ember);margin:24px 0 8px}
+article p{color:var(--fg-dim);margin:0 0 16px}
+article ul,article ol{color:var(--fg-dim);margin:0 0 18px;padding-left:1.4em}
+article li{margin:0 0 9px}
+article strong{color:var(--fg)}
+article kbd{font-family:var(--font-pixel);font-size:.72em;background:var(--surface-2);border:1px solid var(--border-bright);
+  border-bottom-width:2px;border-radius:5px;padding:3px 7px;color:var(--fg);white-space:nowrap}
+
+/* ---- in-article CTA box ---- */
+.cta-box{margin:34px 0;border:2px solid #000;background:
+    radial-gradient(80% 120% at 50% 120%, rgba(255,122,24,.22), transparent 60%),
+    linear-gradient(180deg,#1c0e0a,#120907);
+  box-shadow:0 5px 0 #000,inset 0 0 0 2px var(--blood-deep);padding:clamp(20px,4vw,30px);text-align:center}
+.cta-box h3{font-family:var(--font-display);text-transform:uppercase;color:var(--ember);font-size:1.5rem;margin:0 0 8px}
+.cta-box p{margin:0 auto 18px;max-width:48ch}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-pixel);font-size:11px;letter-spacing:.06em;
+  text-transform:uppercase;color:#fff7ec;background:linear-gradient(180deg,var(--blood-bright),var(--blood) 55%,var(--blood-deep));
+  border:2px solid #000;box-shadow:0 4px 0 #3a0404;padding:15px 22px}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+
+/* ---- FAQ ---- */
+.faq{margin-top:40px;border-top:2px solid var(--border);padding-top:24px}
+.faq h2{border:0;padding:0}
+.faq details{border:2px solid #000;background:linear-gradient(180deg,var(--surface-2),var(--panel));
+  box-shadow:0 3px 0 #000;margin:0 0 12px;padding:14px 16px}
+.faq summary{cursor:pointer;color:var(--fg);font-weight:600;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"▸ ";color:var(--blood)}
+.faq details[open] summary::before{content:"▾ "}
+.faq details p{margin:12px 0 0;color:var(--fg-dim)}
+
+/* ---- post list (blog index) ---- */
+.lede{color:var(--fg-dim);font-size:1.12rem;margin:6px 0 34px;max-width:60ch}
+.posts{display:grid;gap:16px;margin-bottom:40px}
+.post-card{display:block;border:2px solid #000;background:linear-gradient(180deg,var(--surface),#0e0907);
+  box-shadow:0 4px 0 #000,inset 0 0 0 2px var(--border);padding:22px 24px;color:var(--fg)}
+.post-card:hover{text-decoration:none;border-color:var(--border-bright);transform:translateY(-2px)}
+.post-card .tag{font-family:var(--font-pixel);font-size:8px;letter-spacing:.1em;color:var(--hellfire);text-transform:uppercase}
+.post-card h2{font-family:var(--font-display);font-weight:400;text-transform:uppercase;font-size:1.4rem;margin:10px 0 6px;border:0;padding:0}
+.post-card p{color:var(--fg-dim);margin:0;font-size:.96rem}
+
+/* ---- footer ---- */
+footer{border-top:2px solid #000;background:#080605;padding:30px 0 40px;margin-top:48px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer .small{font-size:.8rem;color:var(--muted);max-width:54ch}
+footer a{font-family:var(--font-pixel);font-size:9px;letter-spacing:.06em;text-transform:uppercase}

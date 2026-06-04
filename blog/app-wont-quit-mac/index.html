@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What to Do When an App Won&#x27;t Quit on Mac · MEGAKILL</title>
+<meta name="description" content="App won&#x27;t quit on your Mac? Walk the full force-quit ladder: ⌘Q, Force Quit window, Dock, Activity Monitor, and Terminal killall and kill -9, step by step.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a0706">
+<link rel="canonical" href="https://megakill.app/blog/app-wont-quit-mac/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Chakra+Petch:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MEGAKILL">
+<meta property="og:title" content="What to Do When an App Won&#x27;t Quit on Mac">
+<meta property="og:description" content="App won&#x27;t quit on your Mac? Walk the full force-quit ladder: ⌘Q, Force Quit window, Dock, Activity Monitor, and Terminal killall and kill -9, step by step.">
+<meta property="og:url" content="https://megakill.app/blog/app-wont-quit-mac/">
+<meta property="og:image" content="https://megakill.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What to Do When an App Won&#x27;t Quit on Mac">
+<meta name="twitter:description" content="App won&#x27;t quit on your Mac? Walk the full force-quit ladder: ⌘Q, Force Quit window, Dock, Activity Monitor, and Terminal killall and kill -9, step by step.">
+<meta name="twitter:image" content="https://megakill.app/og-image.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What to Do When an App Won't Quit on Mac", "description": "App won't quit on your Mac? Walk the full force-quit ladder: ⌘Q, Force Quit window, Dock, Activity Monitor, and Terminal killall and kill -9, step by step.", "image": "https://megakill.app/og-image.png", "author": {"@type": "Organization", "name": "MEGAKILL"}, "publisher": {"@type": "Organization", "name": "MEGAKILL"}, "datePublished": "2026-06-04", "dateModified": "2026-06-04", "mainEntityOfPage": "https://megakill.app/blog/app-wont-quit-mac/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://megakill.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://megakill.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "What to Do When an App Won't Quit on Mac", "item": "https://megakill.app/blog/app-wont-quit-mac/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why won't my app quit on Mac?", "acceptedAnswer": {"@type": "Answer", "text": "The app is hung, usually waiting on a stuck task, a slow disk or network operation, or a software bug. When it can't respond to events it ignores Quit and shows the spinning beachball, so you have to force quit it."}}, {"@type": "Question", "name": "What is the keyboard shortcut to force quit on Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Press Option-Command-Escape (⌥⌘⎋) to open the Force Quit Applications window. Select the frozen app and click Force Quit."}}, {"@type": "Question", "name": "Will I lose unsaved work if I force quit?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Force quitting skips the app's normal save-and-close routine, so any unsaved changes are lost. Try a normal Quit (⌘Q) first whenever possible."}}, {"@type": "Question", "name": "What's the difference between killall and kill -9?", "acceptedAnswer": {"@type": "Answer", "text": "killall ends every process matching a name (for example, killall Safari). kill -9 sends SIGKILL to a single process by its ID and cannot be ignored, so use it when killall or a normal quit fails."}}, {"@type": "Question", "name": "How do I force quit an app that isn't in the Force Quit window?", "acceptedAnswer": {"@type": "Answer", "text": "Open Activity Monitor, search for the process by name, select it, click the Stop button, and choose Force Quit. For anything still stubborn, kill it from Terminal with kill -9 and its PID."}}]}</script>
+</head>
+<body>
+<header class="hud"><div class="bar"><a class="brand" href="/">MEGA<i>KILL</i></a><span class="spacer"></span><a class="cta" href="https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip">Download free</a></div></header>
+<main class="wrap">
+<article>
+  <nav class="crumbs"><a href="/">Home</a> / <a href="/blog/">Blog</a> / What to Do When an App Won&#x27;t Quit on Mac</nav>
+  <h1>What to Do When an App Won&#x27;t Quit on Mac</h1>
+  <div class="meta">macOS guide · Updated June 2026</div>
+  <p>An app froze, the spinning beachball won't go away, and <kbd>⌘Q</kbd> does nothing. macOS gives you several ways to kill a stuck app, from gentle to nuclear. Try them in order and one of them will work.</p><p>This guide walks the full escalation ladder, with the exact keys and menus for current macOS (Sonoma and Sequoia).</p>
+  
+<h2>First, try a normal Quit (⌘Q)</h2>
+<p>Click the app to bring it to the front, then press <kbd>⌘Q</kbd>. Or use the menu bar: <strong>[App Name]</strong> &rarr; <strong>Quit</strong>.</p><p>This is the polite shutdown. The app gets a chance to save your work and close cleanly, so always try it first. Give it a few seconds. A busy app saving a large file may just be slow, not frozen.</p><p>If the app ignores <kbd>⌘Q</kbd> or shows the spinning beachball cursor, it's hung. Move on to a force quit.</p>
+<h2>Force Quit window (⌥⌘⎋)</h2>
+<p>This is the fastest reliable fix. Press <kbd>⌥⌘⎋</kbd> (Option-Command-Escape) to open the <strong>Force Quit Applications</strong> window. You can also reach it from the Apple menu (<strong>&#63743;</strong>) &rarr; <strong>Force Quit</strong>.</p><ol><li>Select the stuck app in the list. Frozen apps often read <strong>(not responding)</strong> next to the name.</li><li>Click <strong>Force Quit</strong>.</li><li>Confirm in the dialog.</li></ol><p>Force quitting skips the clean shutdown, so any unsaved changes in that app are lost. That's the trade-off for unsticking a frozen program.</p>
+<h2>Force quit from the Dock</h2>
+<p>Sometimes the quickest route is right where the icon lives. Right-click (or Control-click) the app's icon in the Dock to open its menu.</p><ol><li>Right-click the Dock icon. You'll see a <strong>Quit</strong> option.</li><li>Hold the <kbd>Option</kbd> key. <strong>Quit</strong> changes to <strong>Force Quit</strong>.</li><li>Click <strong>Force Quit</strong> while still holding <kbd>Option</kbd>.</li></ol><p>This does the same thing as the Force Quit window but without leaving the app you're in. Handy when only one program is misbehaving.</p>
+<h2>Use Activity Monitor for stubborn processes</h2>
+<p>If the app won't even show up to be force quit, or a background process is the real culprit, open <strong>Activity Monitor</strong> (in <strong>Applications &rarr; Utilities</strong>, or search it with Spotlight via <kbd>⌘Space</kbd>).</p><ol><li>Find the app or process in the list. Use the search box in the top-right corner to filter by name.</li><li>Select it and click the <strong>Stop</strong> (octagon with an X) button in the toolbar.</li><li>Choose <strong>Force Quit</strong> in the prompt to kill it immediately.</li></ol><p>Activity Monitor also shows CPU and memory, so it's useful for spotting <em>which</em> process is pinned at high usage and dragging your Mac down. Look for processes marked in red as <strong>(Not Responding)</strong>.</p>
+<h2>Kill it from Terminal (killall and kill -9)</h2>
+<p>When nothing in the GUI responds, drop to <strong>Terminal</strong> (in <strong>Applications &rarr; Utilities</strong>). This is the most direct way to end a process.</p><p>The simplest command targets the app by name:</p><ul><li><strong>killall Safari</strong> &mdash; ends all processes with that name. The name must match exactly and is case-sensitive (use <strong>killall "Google Chrome"</strong> for names with spaces).</li></ul><p>If a process refuses even that, find its process ID and send the hard kill signal:</p><ol><li>Run <strong>ps aux | grep AppName</strong> to find the PID (the number in the second column).</li><li>Run <strong>kill -9 PID</strong>, replacing <strong>PID</strong> with that number. For example, <strong>kill -9 1234</strong>.</li></ol><p><kbd>kill -9</kbd> sends SIGKILL, which the process cannot catch or ignore. It will not save anything. Use it only when gentler signals fail.</p>
+<h2>The instant, no-menu way: MEGAKILL</h2>
+<p>If you force-quit apps often, the menu dance gets old fast. <strong>MEGAKILL</strong> is a macOS menu-bar app that turns it into one click: hold its shortcut (<kbd>⌃⌥⌘</kbd> by default), your cursor becomes a DOOM-style shotgun, and you click the frozen app's Dock icon or its window to force-quit it on the spot. No dialogs, no PID hunting. It even racks up kill streaks (KILL!, DOUBLE KILL, MEGA KILL) for fun. It's the fastest way to nuke a hung app when you've had enough.</p>
+<h2>When nothing works: last resort</h2>
+<p>If even <kbd>kill -9</kbd> won't end the process, or the whole machine is unresponsive, the app may be stuck in an uninterruptible state (often waiting on disk or a network mount). At that point:</p><ol><li>Wait a minute. A process stuck on slow I/O sometimes recovers on its own.</li><li>Log out and back in (Apple menu &rarr; <strong>Log Out</strong>) to clear your session's apps.</li><li>Restart the Mac (Apple menu &rarr; <strong>Restart</strong>).</li><li>If the Mac won't restart, force a shutdown: hold the power button for about 10 seconds until it powers off, then turn it back on.</li></ol><p>A forced shutdown is genuinely the last resort. Save the power-button hold for a fully locked machine, since it can affect open files. After a restart, check for app and macOS updates, since chronic freezes are often fixed in a newer version.</p>
+
+  <div class="cta-box">
+    <h3>Force-quit, the fun way</h3>
+    <p>Tired of the Force Quit dialog? <strong>MEGAKILL</strong> makes killing a frozen app an event. Hold the shortcut, your cursor turns into a shotgun, and you blast the stuck app's Dock icon or window into oblivion in one click. Instant force-quit, screen shake, kill streaks, the works. Free for your first 100 kills, then €1.99 to unlock unlimited. Rip and tear.</p>
+    <a class="btn" href="https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip">Download MEGAKILL — free</a>
+  </div>
+
+  <section class="faq">
+    <h2>Frequently asked questions</h2>
+  <details><summary>Why won&#x27;t my app quit on Mac?</summary><p>The app is hung, usually waiting on a stuck task, a slow disk or network operation, or a software bug. When it can&#x27;t respond to events it ignores Quit and shows the spinning beachball, so you have to force quit it.</p></details>
+  <details><summary>What is the keyboard shortcut to force quit on Mac?</summary><p>Press Option-Command-Escape (⌥⌘⎋) to open the Force Quit Applications window. Select the frozen app and click Force Quit.</p></details>
+  <details><summary>Will I lose unsaved work if I force quit?</summary><p>Yes. Force quitting skips the app&#x27;s normal save-and-close routine, so any unsaved changes are lost. Try a normal Quit (⌘Q) first whenever possible.</p></details>
+  <details><summary>What&#x27;s the difference between killall and kill -9?</summary><p>killall ends every process matching a name (for example, killall Safari). kill -9 sends SIGKILL to a single process by its ID and cannot be ignored, so use it when killall or a normal quit fails.</p></details>
+  <details><summary>How do I force quit an app that isn&#x27;t in the Force Quit window?</summary><p>Open Activity Monitor, search for the process by name, select it, click the Stop button, and choose Force Quit. For anything still stubborn, kill it from Terminal with kill -9 and its PID.</p></details>
+  </section>
+</article>
+</main>
+<footer><div class="wrap"><p class="small">MEGAKILL is a macOS menu-bar app that force-quits apps by shooting them. A loving tribute to DOOM (1993, id Software); not affiliated with id Software or ZeniMax.</p><div><a href="/">megakill.app</a> &nbsp;·&nbsp; <a href="/blog/">Blog</a></div></div></footer>
+</body>
+</html>

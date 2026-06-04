@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Force Quit an App from the Dock on Mac · MEGAKILL</title>
+<meta name="description" content="Force quit a frozen Mac app right from the Dock: Control-click the icon, hold Option so Quit becomes Force Quit, then click. Plus ⌥⌘⎋ and Activity Monitor.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a0706">
+<link rel="canonical" href="https://megakill.app/blog/force-quit-app-from-dock-mac/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Chakra+Petch:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MEGAKILL">
+<meta property="og:title" content="How to Force Quit an App from the Dock on Mac">
+<meta property="og:description" content="Force quit a frozen Mac app right from the Dock: Control-click the icon, hold Option so Quit becomes Force Quit, then click. Plus ⌥⌘⎋ and Activity Monitor.">
+<meta property="og:url" content="https://megakill.app/blog/force-quit-app-from-dock-mac/">
+<meta property="og:image" content="https://megakill.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Force Quit an App from the Dock on Mac">
+<meta name="twitter:description" content="Force quit a frozen Mac app right from the Dock: Control-click the icon, hold Option so Quit becomes Force Quit, then click. Plus ⌥⌘⎋ and Activity Monitor.">
+<meta name="twitter:image" content="https://megakill.app/og-image.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Force Quit an App from the Dock on Mac", "description": "Force quit a frozen Mac app right from the Dock: Control-click the icon, hold Option so Quit becomes Force Quit, then click. Plus ⌥⌘⎋ and Activity Monitor.", "image": "https://megakill.app/og-image.png", "author": {"@type": "Organization", "name": "MEGAKILL"}, "publisher": {"@type": "Organization", "name": "MEGAKILL"}, "datePublished": "2026-06-04", "dateModified": "2026-06-04", "mainEntityOfPage": "https://megakill.app/blog/force-quit-app-from-dock-mac/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://megakill.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://megakill.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Force Quit an App from the Dock on Mac", "item": "https://megakill.app/blog/force-quit-app-from-dock-mac/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I force quit an app from the Dock on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Control-click (or right-click) the app's icon in the Dock, hold the Option key so Quit changes to Force Quit, then click Force Quit. The app closes instantly with no confirmation."}}, {"@type": "Question", "name": "Why does my Dock menu only show Quit, not Force Quit?", "acceptedAnswer": {"@type": "Answer", "text": "You need to hold the Option key while the Dock menu is open. Quit becomes Force Quit only while Option is pressed, unless macOS has already flagged the app as not responding."}}, {"@type": "Question", "name": "What is the keyboard shortcut to force quit on Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Press Option-Command-Esc (⌥⌘⎋) to open the Force Quit window. Select the frozen app, then click Force Quit."}}, {"@type": "Question", "name": "Will I lose my work if I force quit an app?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Force quitting skips the app's normal save-and-shutdown, so any unsaved changes are lost. Use a normal Quit (Command-Q) whenever the app is still responsive."}}, {"@type": "Question", "name": "What if an app won't force quit even from the Dock?", "acceptedAnswer": {"@type": "Answer", "text": "Try the ⌥⌘⎋ Force Quit window, then Activity Monitor (select the process and click Stop). As a last resort, use Terminal with killall or kill -9 on the process ID."}}]}</script>
+</head>
+<body>
+<header class="hud"><div class="bar"><a class="brand" href="/">MEGA<i>KILL</i></a><span class="spacer"></span><a class="cta" href="https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip">Download free</a></div></header>
+<main class="wrap">
+<article>
+  <nav class="crumbs"><a href="/">Home</a> / <a href="/blog/">Blog</a> / How to Force Quit an App from the Dock on Mac</nav>
+  <h1>How to Force Quit an App from the Dock on Mac</h1>
+  <div class="meta">macOS guide · Updated June 2026</div>
+  <p>An app froze and the spinning beach ball won't go away. The fastest place to kill it is somewhere you already have it: the Dock.</p><p>Here's the exact way to force quit an app straight from its Dock icon, plus two reliable backups for when the Dock trick isn't enough.</p>
+  
+<h2>Force quit from the Dock: the Option key trick</h2>
+<p>Every running app in your Dock has a hidden Force Quit option. You just have to reveal it.</p><ol><li>Find the app's icon in the Dock.</li><li><strong>Control-click</strong> the icon (or right-click, or click and hold) to open its menu.</li><li>Hold down the <kbd>Option</kbd> (<kbd>⌥</kbd>) key. Watch the menu: the <strong>Quit</strong> item changes to <strong>Force Quit</strong>.</li><li>With <kbd>Option</kbd> still held, click <strong>Force Quit</strong>.</li></ol><p>The app closes immediately, no confirmation dialog. That's the whole method. The key detail people miss is step 3: without <kbd>Option</kbd> held, you only get a normal <strong>Quit</strong>, which a frozen app will ignore.</p>
+<h2>When the Dock shows &quot;Application Not Responding&quot;</h2>
+<p>Sometimes you don't even need the <kbd>Option</kbd> key. When macOS detects an app has stopped responding, the Dock menu changes on its own.</p><ul><li>Control-click the frozen icon and the menu shows <strong>Force Quit</strong> directly, no <kbd>Option</kbd> required.</li><li>You may also see <strong>Application Not Responding</strong> listed at the top of the menu as a status line.</li></ul><p>If you see that, just click <strong>Force Quit</strong>. If the app is only sluggish rather than fully hung, the menu may still read <strong>Quit</strong>, so fall back to the <kbd>Option</kbd> trick above.</p>
+<h2>Alternative 1: the Force Quit window (⌥⌘⎋)</h2>
+<p>If the Dock is hidden, or the app has no Dock icon, use the system Force Quit window.</p><ol><li>Press <kbd>Option</kbd>-<kbd>Command</kbd>-<kbd>Esc</kbd> (<kbd>⌥⌘⎋</kbd>).</li><li>Pick the app in the list. Frozen apps are usually labeled <strong>(not responding)</strong> in red.</li><li>Click <strong>Force Quit</strong>, then confirm.</li></ol><p>You can also open this window from the <strong>Apple menu</strong> () in the top-left corner, where it's listed as <strong>Force Quit</strong>.</p>
+<h2>Alternative 2: Activity Monitor</h2>
+<p>Activity Monitor is the heavier tool. Use it when an app won't die any other way, or when you need to kill a background process that has no Dock icon at all.</p><ol><li>Open <strong>Activity Monitor</strong> (in <strong>Applications &gt; Utilities</strong>, or search it with Spotlight).</li><li>Select the misbehaving process in the list.</li><li>Click the <strong>Stop</strong> button (the octagon with an <strong>X</strong>) in the toolbar.</li><li>Choose <strong>Force Quit</strong> in the dialog.</li></ol><p>For the rare app that ignores even that, advanced users can open <strong>Terminal</strong> and run <kbd>killall "App Name"</kbd>, or <kbd>kill -9 &lt;pid&gt;</kbd> using the process ID shown in Activity Monitor. Be precise: a wrong PID kills the wrong process.</p>
+<h2>Which method should you use?</h2>
+<ul><li><strong>App has a Dock icon and is visibly stuck:</strong> Control-click it, hold <kbd>Option</kbd>, click <strong>Force Quit</strong>. Fastest.</li><li><strong>Dock hidden or app has no icon:</strong> <kbd>⌥⌘⎋</kbd> Force Quit window.</li><li><strong>Nothing works, or it's a background process:</strong> Activity Monitor, then Terminal as a last resort.</li></ul><p>If you find yourself force-quitting the same apps all day, there's a faster, more entertaining option. <strong>MEGAKILL</strong> is a menu-bar app that turns force-quitting into one click: hold a shortcut, your cursor becomes a shotgun, and you click an app's Dock icon to force-quit it instantly. It's the quickest way to clear a stuck app straight from the Dock without digging through menus.</p>
+<h2>What force quitting does (and doesn&#x27;t) do</h2>
+<p>Force quitting kills the app immediately and skips its normal shutdown. That means <strong>unsaved work is lost</strong>, the same as pulling the plug on that one app. It does not harm macOS or your other apps.</p><p>A few practical notes:</p><ul><li>System pieces like <strong>Finder</strong> can't really be quit, only relaunched. The Force Quit window offers <strong>Relaunch</strong> for Finder instead.</li><li>If an app keeps freezing right after you reopen it, quit it and check for an update before relaunching.</li><li>Force quit is for emergencies. When an app is responsive, a normal <strong>Quit</strong> (<kbd>Command</kbd>-<kbd>Q</kbd>) is safer because it saves and shuts down cleanly.</li></ul>
+
+  <div class="cta-box">
+    <h3>Force-quit, the fun way</h3>
+    <p>Tired of the Control-click, hold-Option, aim-for-the-tiny-menu dance? <strong>MEGAKILL</strong> turns force-quitting into a single click: hold <kbd>⌃⌥⌘</kbd>, your cursor becomes a DOOM-style shotgun, and you blast a frozen app's Dock icon into oblivion. Force quit, instantly, with sound effects and kill streaks. Free for your first 100 kills, then a one-time unlock. Rip and tear through stuck apps.</p>
+    <a class="btn" href="https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip">Download MEGAKILL — free</a>
+  </div>
+
+  <section class="faq">
+    <h2>Frequently asked questions</h2>
+  <details><summary>How do I force quit an app from the Dock on a Mac?</summary><p>Control-click (or right-click) the app&#x27;s icon in the Dock, hold the Option key so Quit changes to Force Quit, then click Force Quit. The app closes instantly with no confirmation.</p></details>
+  <details><summary>Why does my Dock menu only show Quit, not Force Quit?</summary><p>You need to hold the Option key while the Dock menu is open. Quit becomes Force Quit only while Option is pressed, unless macOS has already flagged the app as not responding.</p></details>
+  <details><summary>What is the keyboard shortcut to force quit on Mac?</summary><p>Press Option-Command-Esc (⌥⌘⎋) to open the Force Quit window. Select the frozen app, then click Force Quit.</p></details>
+  <details><summary>Will I lose my work if I force quit an app?</summary><p>Yes. Force quitting skips the app&#x27;s normal save-and-shutdown, so any unsaved changes are lost. Use a normal Quit (Command-Q) whenever the app is still responsive.</p></details>
+  <details><summary>What if an app won&#x27;t force quit even from the Dock?</summary><p>Try the ⌥⌘⎋ Force Quit window, then Activity Monitor (select the process and click Stop). As a last resort, use Terminal with killall or kill -9 on the process ID.</p></details>
+  </section>
+</article>
+</main>
+<footer><div class="wrap"><p class="small">MEGAKILL is a macOS menu-bar app that force-quits apps by shooting them. A loving tribute to DOOM (1993, id Software); not affiliated with id Software or ZeniMax.</p><div><a href="/">megakill.app</a> &nbsp;·&nbsp; <a href="/blog/">Blog</a></div></div></footer>
+</body>
+</html>
