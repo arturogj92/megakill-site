@@ -6,6 +6,13 @@
     <description>Most recent MEGAKILL updates</description>
     <language>en</language>
     <item>
+      <title>Version 0.1.1</title>
+      <description><![CDATA[<h2>MEGAKILL 0.1.1</h2><ul><li>New first-run onboarding wizard (the landing-style how-to)</li><li>Wound mode: shoot an app's window to close just that window, keep the app running</li><li>Default shortcut is now ⌥⌘ (Option-Command)</li><li>Fixed the app icon</li></ul>]]></description>
+      <pubDate>Thu, 04 Jun 2026 20:33:31 +0200</pubDate>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/arturogj92/megakill-site/releases/download/v0.1.1/MEGAKILL-v0.1.1-macOS.zip" sparkle:version="2" sparkle:shortVersionString="0.1.1" length="3956495" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Version 0.1.0</title>
       <description><![CDATA[<h2>MEGAKILL 0.1.0</h2><p>First release — hold your shortcut and shoot apps in the Dock to force-quit them.</p>]]></description>
       <pubDate>Thu, 04 Jun 2026 18:12:43 +0200</pubDate>
