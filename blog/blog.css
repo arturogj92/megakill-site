@@ -46,6 +46,8 @@ article h1{font-family:var(--font-display);font-weight:400;text-transform:upperc
   font-size:clamp(2rem,6vw,3.1rem);margin-bottom:10px;
   text-shadow:0 2px 0 #2a0606,0 4px 10px rgba(207,23,23,.3)}
 .meta{font-family:var(--font-pixel);font-size:9px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-bottom:28px}
+.answer{font-size:1.05rem;color:var(--fg);background:linear-gradient(180deg,var(--surface-2),var(--panel));
+  border-left:4px solid var(--ember);box-shadow:0 3px 0 #000;padding:14px 16px;margin:4px 0 24px}
 article h2{font-family:var(--font-display);font-weight:400;text-transform:uppercase;color:var(--fg);
   font-size:clamp(1.4rem,3.6vw,1.9rem);line-height:1.15;margin:38px 0 12px;
   border-left:4px solid var(--blood);padding-left:12px}

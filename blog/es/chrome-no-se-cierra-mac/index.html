@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chrome no se cierra en Mac: cómo forzar el cierre · MEGAKILL</title>
+<meta name="description" content="¿Google Chrome no se cierra en Mac y se queda colgado? El culpable suele ser un proceso en segundo plano. Aquí tienes los pasos exactos, del Administrador de tareas de Chrome a Terminal.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a0706">
+<link rel="canonical" href="https://megakill.app/blog/es/chrome-no-se-cierra-mac/">
+<link rel="alternate" hreflang="en" href="https://megakill.app/blog/chrome-wont-quit-mac/">
+<link rel="alternate" hreflang="es" href="https://megakill.app/blog/es/chrome-no-se-cierra-mac/">
+<link rel="alternate" hreflang="x-default" href="https://megakill.app/blog/chrome-wont-quit-mac/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Chakra+Petch:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MEGAKILL">
+<meta property="og:title" content="Chrome no se cierra en Mac: cómo forzar el cierre">
+<meta property="og:description" content="¿Google Chrome no se cierra en Mac y se queda colgado? El culpable suele ser un proceso en segundo plano. Aquí tienes los pasos exactos, del Administrador de tareas de Chrome a Terminal.">
+<meta property="og:url" content="https://megakill.app/blog/es/chrome-no-se-cierra-mac/">
+<meta property="og:image" content="https://megakill.app/og-image.png">
+<meta property="og:locale" content="es">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chrome no se cierra en Mac: cómo forzar el cierre">
+<meta name="twitter:description" content="¿Google Chrome no se cierra en Mac y se queda colgado? El culpable suele ser un proceso en segundo plano. Aquí tienes los pasos exactos, del Administrador de tareas de Chrome a Terminal.">
+<meta name="twitter:image" content="https://megakill.app/og-image.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Chrome no se cierra en Mac: cómo forzar el cierre", "description": "¿Google Chrome no se cierra en Mac y se queda colgado? El culpable suele ser un proceso en segundo plano. Aquí tienes los pasos exactos, del Administrador de tareas de Chrome a Terminal.", "image": "https://megakill.app/og-image.png", "inLanguage": "es", "author": {"@type": "Organization", "name": "MEGAKILL"}, "publisher": {"@type": "Organization", "name": "MEGAKILL"}, "datePublished": "2026-06-05", "dateModified": "2026-06-05", "mainEntityOfPage": "https://megakill.app/blog/es/chrome-no-se-cierra-mac/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://megakill.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://megakill.app/blog/es/"}, {"@type": "ListItem", "position": 3, "name": "Chrome no se cierra en Mac: cómo forzar el cierre", "item": "https://megakill.app/blog/es/chrome-no-se-cierra-mac/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Por qué Chrome no se cierra del todo en mi Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Casi siempre porque Chrome sigue ejecutando procesos en segundo plano para apps y extensiones, o porque una pestaña dejó de responder y bloquea la salida. Cada pestaña y extensión es un proceso aparte, así que uno colgado puede impedir que toda la app cierre."}}, {"@type": "Question", "name": "¿Cómo cierro una sola pestaña colgada sin cerrar todo Chrome?", "acceptedAnswer": {"@type": "Answer", "text": "Usa el Administrador de tareas propio de Chrome. Abre el menú Ventana y elige Administrador de tareas, selecciona la pestaña o extensión que aparece como Sin responder y pulsa Finalizar proceso. Cierra solo ese proceso y el resto del navegador sigue funcionando."}}, {"@type": "Question", "name": "¿Cuál es el atajo para forzar el cierre de Chrome en Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Pulsa Opción-Comando-Escape para abrir la ventana Forzar salida de aplicaciones, selecciona Google Chrome y pulsa Forzar salida. Mata todos los procesos de Chrome de golpe, incluidos los que quedan en segundo plano."}}, {"@type": "Question", "name": "¿Pierdo mis pestañas si fuerzo el cierre de Chrome?", "acceptedAnswer": {"@type": "Answer", "text": "No pierdes las pestañas si tienes activada la opción de continuar donde lo dejaste, o si usas el botón Restaurar al volver a abrir Chrome. Sí pierdes datos sin enviar de formularios o subidas a medias. Lo que estaba guardado en tu cuenta de Google se sincroniza igual."}}, {"@type": "Question", "name": "¿Qué hago si killall Google Chrome no funciona?", "acceptedAnswer": {"@type": "Answer", "text": "Localiza los procesos con pgrep -fl Chrome para ver sus PID y mátalos con kill -9 seguido del número. Chrome lanza varios procesos a la vez, así que puede que tengas que repetir el comando o usar killall con el nombre exacto entre comillas hasta que caigan todos."}}]}</script>
+</head>
+<body>
+<header class="hud"><div class="bar"><a class="brand" href="/"><img src="/assets/logo.png" alt="">MEGA<i>KILL</i></a><span class="spacer"></span><a class="cta" style="background:transparent;box-shadow:none;border:2px solid #5c4230;color:#bdac8a;margin-right:8px" href="https://megakill.app/blog/chrome-wont-quit-mac/">EN</a><a class="cta" href="https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip">Descargar gratis</a></div></header>
+<main class="wrap">
+<article>
+  <nav class="crumbs"><a href="/">Inicio</a> / <a href="https://megakill.app/blog/es/">Blog</a> / Chrome no se cierra en Mac: cómo forzar el cierre</nav>
+  <h1>Chrome no se cierra en Mac: cómo forzar el cierre</h1>
+  <div class="meta">Guía de macOS · Actualizado 5 junio 2026</div>
+  <p class="answer">Si Chrome no se cierra en tu Mac, fuérzalo con <kbd>⌥⌘⎋</kbd> (Opción, Comando, Escape), selecciona Google Chrome y pulsa Forzar salida. El culpable casi siempre es un proceso en segundo plano o una pestaña colgada. Para cerrar solo esa pestaña, usa el Administrador de tareas propio de Chrome.</p>
+  <p>Pulsas <kbd>⌘Q</kbd>, ves la barra de "Saliendo de Chrome"... y ahí se queda. O la ventana reaparece como si nada hubiera pasado. Chrome es de las apps que más arrastra este problema en Mac, y casi nunca tiene la culpa macOS. El motivo está en cómo está hecho el propio navegador.</p>
+  <p>Aquí tienes el orden exacto, de lo más fino (matar solo la pestaña que falla) a lo más bruto (Terminal). Empieza por arriba y baja un paso solo si el anterior no resuelve nada.</p>
+
+<h2>Por qué Chrome no cierra (procesos en segundo plano)</h2>
+<p>Chrome no es un solo programa. Lanza un proceso aparte por cada pestaña, por cada extensión y para el motor gráfico (el llamado proceso GPU). Eso lo hace rápido y estable. También significa que, si una sola pestaña o extensión se cuelga, puede bloquear la salida de todo el navegador.</p>
+<p>A eso se suma una opción concreta de Chrome: <strong>Continuar ejecutando apps en segundo plano cuando Google Chrome está cerrado</strong>. Con ella activada, al cerrar la ventana Chrome no muere del todo. Deja un proceso vivo (verás un iconito de Chrome en la barra de menús, arriba a la derecha) para que sigan funcionando notificaciones y apps. Por eso parece que "no se cierra": en realidad está cerrado a medias, a propósito.</p>
+<p>Las causas más típicas de que se quede colgado:</p>
+<ul>
+<li>Una pestaña pesada (una videollamada, un editor online, una web con mucho JavaScript) que dejó de responder.</li>
+<li>Una extensión defectuosa que bloquea el cierre.</li>
+<li>El proceso en segundo plano que acabamos de mencionar, que sobrevive a propósito.</li>
+<li>Una descarga o subida a medias que Chrome no quiere abandonar.</li>
+</ul>
+<p>La buena noticia: como cada parte es un proceso independiente, muchas veces basta con matar el que falla y dejar el resto en paz.</p>
+
+<h2>Paso 1: cierra solo la pestaña colgada (Administrador de tareas de Chrome)</h2>
+<p>Chrome trae su propio administrador de tareas, parecido al del sistema pero solo para sus procesos. Es lo primero que conviene probar, porque te deja matar la pestaña o extensión que falla sin cerrar el navegador entero.</p>
+<ol>
+<li>Con Chrome al frente, abre el menú <strong>Ventana</strong> en la barra de menús de arriba.</li>
+<li>Elige <strong>Administrador de tareas</strong> (o pulsa <kbd>⌥Esc</kbd> dentro de Chrome).</li>
+<li>Busca la fila que ponga <strong>Sin responder</strong>, o la que se coma más memoria y CPU.</li>
+<li>Selecciónala y pulsa <strong>Finalizar proceso</strong>.</li>
+</ol>
+<p>La pestaña mostrará el aviso de "¡Vaya!", pero el resto de Chrome sigue intacto: tus demás pestañas, sesiones y descargas no se tocan. Si el navegador entero está congelado y ni este menú responde, pasa al siguiente paso.</p>
+
+<h2>Paso 2: salir con normalidad (⌘Q) y desactivar el segundo plano</h2>
+<p>Si Chrome responde pero no termina de cerrarse, dale el cierre limpio. Haz clic en una ventana de Chrome y pulsa <kbd>⌘Q</kbd>. Chrome tiene una manía: por seguridad, a veces pide que <strong>mantengas pulsado</strong> <kbd>⌘Q</kbd> un par de segundos para confirmar la salida (así evita cerrarlo sin querer con muchas pestañas abiertas).</p>
+<p>Si vuelve a abrirse solo o el icono se queda en la barra de menús, desactiva el proceso fantasma:</p>
+<ol>
+<li>En Chrome ve a <strong>Configuración &gt; Sistema</strong>.</li>
+<li>Desactiva <strong>Continuar ejecutando apps en segundo plano cuando Google Chrome está cerrado</strong>.</li>
+</ol>
+<p>A partir de ahí, <kbd>⌘Q</kbd> sí cierra Chrome por completo. Si sigue colgado y la pelota de playa no para de girar, esto ya no basta: toca forzar la salida. Es el mismo principio que con <a href="https://megakill.app/blog/es/app-no-se-cierra-mac/">cualquier app colgada que no se cierra</a>.</p>
+
+<h2>Paso 3: ventana Forzar salida (⌥⌘⎋)</h2>
+<p>El método universal de macOS, y el que funciona el 90% de las veces con Chrome porque mata todos sus procesos a la vez, el de segundo plano incluido.</p>
+<ol>
+<li>Pulsa <kbd>⌥⌘⎋</kbd> (Opción, Comando, Escape). También llegas desde el menú Apple () &gt; <strong>Forzar salida</strong>.</li>
+<li>En la lista, selecciona <strong>Google Chrome</strong>. Si está colgado, aparecerá con un "(no responde)" en rojo.</li>
+<li>Pulsa <strong>Forzar salida</strong> y confirma.</li>
+</ol>
+<p>Esto cierra Chrome de golpe. Al volver a abrirlo, te ofrecerá <strong>Restaurar</strong> las pestañas que tenías. Si quieres profundizar, tienes una guía dedicada a <a href="https://megakill.app/blog/es/atajos-forzar-cierre-mac/">los atajos de teclado para forzar el cierre</a> y otra sobre <a href="https://megakill.app/blog/es/forzar-cierre-app-dock-mac/">forzar el cierre desde el Dock</a> con la tecla Opción.</p>
+
+<h2>Paso 4: Monitor de Actividad (cuando quedan procesos de Chrome sueltos)</h2>
+<p>A veces fuerzas la salida y aún notas el ventilador a tope o el Mac lento: han quedado procesos de Chrome vivos. El Monitor de Actividad te los enseña todos.</p>
+<ol>
+<li>Ábrelo desde <strong>Aplicaciones &gt; Utilidades &gt; Monitor de Actividad</strong> o búscalo con Spotlight (<kbd>⌘Espacio</kbd>).</li>
+<li>En el buscador de arriba a la derecha, escribe <strong>Chrome</strong>. Verás varias filas: "Google Chrome", "Google Chrome Helper", "Google Chrome Helper (GPU)", "Google Chrome Helper (Renderer)".</li>
+<li>Selecciona el proceso principal, <strong>Google Chrome</strong>, y pulsa el botón <strong>X</strong> (octágono) de la esquina superior izquierda.</li>
+<li>Elige <strong>Forzar salida</strong>. Al matar el padre suelen caer también los Helper. Si alguno sobrevive, repite con él.</li>
+</ol>
+<p>Aquí también ves cuánta memoria y CPU se está comiendo cada pestaña, útil si Chrome te tiene el <a href="https://megakill.app/blog/es/mac-va-lento-liberar-ram/">Mac lento y quieres liberar RAM</a>. Si quieres dominar esta app a fondo, mira la guía del <a href="https://megakill.app/blog/es/monitor-de-actividad-mac/">Monitor de Actividad en Mac</a>.</p>
+
+<h2>Paso 5: Terminal (killall, kill -9) como último recurso</h2>
+<p>Si nada de lo anterior responde, abre Terminal desde <strong>Aplicaciones &gt; Utilidades &gt; Terminal</strong>. Lo primero, mata Chrome por su nombre (lleva un espacio, así que va entre comillas):</p>
+<ul><li><kbd>killall "Google Chrome"</kbd></li></ul>
+<p>Como Chrome arranca muchos procesos, puede que el comando no se los lleve todos a la primera. Para asegurarte, localiza los PID y mátalos a la fuerza:</p>
+<ol>
+<li>Lista los procesos con <kbd>pgrep -fl Chrome</kbd>. Te devuelve cada número (PID) y su nombre.</li>
+<li>Mata el que toque con <kbd>kill -9 PID</kbd> (cambia PID por el número real). Repite si quedan Helper sueltos.</li>
+</ol>
+<p>El <kbd>-9</kbd> es la señal más dura: el proceso muere al instante, sin guardar nada. Después, vuelve a abrir Chrome con normalidad. Si Chrome se cuelga al arrancar una y otra vez, prueba a iniciarlo con un perfil limpio o desinstala las extensiones que añadiste hace poco. Cuando ni Terminal responde, te queda el <a href="https://megakill.app/blog/es/forzar-salida-no-funciona-mac/">caso de cuando forzar la salida falla</a>: reiniciar desde el menú Apple () &gt; Reiniciar.</p>
+
+<h2>La forma instantánea (y divertida) de cerrar Chrome</h2>
+<figure class="post-demo"><video src="/assets/megakill-demo-blog.mp4" autoplay loop muted playsinline preload="metadata"></video><figcaption>MEGAKILL en acción: dispara a Chrome para forzar su cierre</figcaption></figure>
+<p>Si Chrome se te cuelga a menudo, abrir ventanas y menús cada vez cansa. <strong>MEGAKILL</strong> es una app de la barra de menús que convierte cerrar apps en un disparo. Mantienes el atajo (<kbd>⌥⌘</kbd>, Opción más Comando, por defecto, configurable en el menú), el cursor se vuelve una escopeta de doble cañón estilo DOOM y apuntas. Haz clic en el icono de Chrome en el Dock (o en una de sus ventanas) y la app entera cae al instante, con efecto de pantalla, sonido de escopeta real y racha de bajas.</p>
+<p>Por detrás hace lo mismo que "Forzar salida", solo que en un gesto y sin abrir nada. Tiene un detalle perfecto para Chrome: el <strong>modo herida</strong>. Si disparas a una ventana suelta, cierra solo esa ventana. Si disparas al icono del Dock, mata el navegador completo. La escopeta da dos disparos y se recarga con clic derecho (dos disparos por recarga). Finder, el Dock y los procesos críticos del sistema están blindados, así que no puedes romper tu Mac. Funciona en macOS 14 (Sonoma) o posterior, vive fuera de la App Store (app notarizada con Developer ID) y se actualiza sola con Sparkle.</p>
+
+  <div class="cta-box">
+    <h3>Cierra Chrome de un escopetazo</h3>
+    <p>Deja de pelear con la barra de "Saliendo de Chrome". Con <strong>MEGAKILL</strong> apuntas, disparas y Chrome cae al instante, con escopeta de DOOM, sonido y rachas de bajas. Las primeras 100 bajas son gratis. Después, un pago único de 1,99 € te da disparos ilimitados. Necesitas macOS 14 o posterior, y se descarga fuera de la App Store. Hazte con él en <strong>megakill.app</strong> y conviértete en el verdugo de tus pestañas zombi.</p>
+    <a class="btn" href="https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip">Descargar MEGAKILL, gratis</a>
+  </div>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+  <details><summary>¿Por qué Chrome no se cierra del todo en mi Mac?</summary><p>Casi siempre porque Chrome sigue ejecutando procesos en segundo plano para apps y extensiones, o porque una pestaña dejó de responder y bloquea la salida. Cada pestaña y extensión es un proceso aparte, así que uno colgado puede impedir que toda la app cierre.</p></details>
+  <details><summary>¿Cómo cierro una sola pestaña colgada sin cerrar todo Chrome?</summary><p>Usa el Administrador de tareas propio de Chrome. Abre el menú Ventana y elige Administrador de tareas, selecciona la pestaña o extensión que aparece como Sin responder y pulsa Finalizar proceso. Cierra solo ese proceso y el resto del navegador sigue funcionando.</p></details>
+  <details><summary>¿Cuál es el atajo para forzar el cierre de Chrome en Mac?</summary><p>Pulsa Opción-Comando-Escape para abrir la ventana Forzar salida de aplicaciones, selecciona Google Chrome y pulsa Forzar salida. Mata todos los procesos de Chrome de golpe, incluidos los que quedan en segundo plano.</p></details>
+  <details><summary>¿Pierdo mis pestañas si fuerzo el cierre de Chrome?</summary><p>No pierdes las pestañas si tienes activada la opción de continuar donde lo dejaste, o si usas el botón Restaurar al volver a abrir Chrome. Sí pierdes datos sin enviar de formularios o subidas a medias. Lo que estaba guardado en tu cuenta de Google se sincroniza igual.</p></details>
+  <details><summary>¿Qué hago si killall Google Chrome no funciona?</summary><p>Localiza los procesos con pgrep -fl Chrome para ver sus PID y mátalos con kill -9 seguido del número. Chrome lanza varios procesos a la vez, así que puede que tengas que repetir el comando o usar killall con el nombre exacto entre comillas hasta que caigan todos.</p></details>
+  </section>
+</article>
+</main>
+<footer><div class="wrap"><p class="small">MEGAKILL es una app de barra de menús para macOS que fuerza el cierre de apps disparándoles. Un homenaje a DOOM (1993, id Software); sin afiliación con id Software ni ZeniMax.</p><div><a href="/">megakill.app</a> &nbsp;·&nbsp; <a href="/blog/">Blog</a></div></div></footer>
+</body>
+</html>
