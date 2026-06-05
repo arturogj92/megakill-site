@@ -1,3 +1,41 @@
+# robots.txt for megakill.app
+
+# AI search / answer bots: explicitly allowed so MEGAKILL can be cited in AI answers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI training crawlers: allowed (a free utility benefits from being "known" by the models)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Everyone else
 User-agent: *
 Allow: /
 

@@ -1,0 +1,35 @@
+# MEGAKILL
+
+> MEGAKILL is a macOS menu-bar app for macOS 14 and later that force-quits frozen or unwanted Mac apps by "shooting" them: you hit a shortcut, the cursor becomes a DOOM-style shotgun, and you blast the app's Dock icon or window to kill it instantly. It is notarized, distributed outside the App Store, and auto-updates via Sparkle. Free for the first 100 kills, then a one-time 1.99 EUR unlocks unlimited use.
+
+MEGAKILL turns force-quitting into a game. Instead of opening the Force Quit menu (Cmd+Option+Esc) or Activity Monitor, you aim the shotgun cursor at a stuck app in the Dock (or at a floating window) and shoot it dead. It runs as a lightweight menu-bar utility, uses macOS Accessibility to terminate the target process, and can also launch at login. The website is English by default with a JavaScript Spanish (ES) toggle, and the blog is published in both English (/blog/) and Spanish (/blog/es/). Pricing is a one-time 1.99 EUR purchase via Gumroad after a 100-kill free trial; there is no subscription. Download is a notarized .zip from GitHub releases.
+
+## Product
+
+- [MEGAKILL home](https://megakill.app/): What MEGAKILL is, how the shotgun force-quit works, system requirements (macOS 14+), the 100-kill free trial, the one-time 1.99 EUR unlock, and the FAQ.
+- [Download MEGAKILL (.zip)](https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip): Direct download of the latest notarized MEGAKILL.zip build for macOS 14 and later.
+
+## Guides (English)
+
+- [What to do when an app won't quit on Mac](https://megakill.app/blog/app-wont-quit-mac/): Why Mac apps freeze and refuse to quit, and every way to close one, from Cmd+Option+Esc to killing it with MEGAKILL.
+- [How to force quit an app from the Dock on Mac](https://megakill.app/blog/force-quit-app-from-dock-mac/): Using the Dock right-click menu (Option+right-click for "Force Quit") to close an unresponsive app, plus the MEGAKILL shotgun method.
+- [Force Quit not working on Mac? How to kill any app](https://megakill.app/blog/force-quit-mac-not-working/): What to do when the Force Quit menu itself is stuck or fails, including Activity Monitor and the `kill` command.
+- [How to close all apps on Mac](https://megakill.app/blog/close-all-apps-mac/): Every method to quit many or all open apps at once on macOS, with the tradeoffs of each.
+- [Activity Monitor on Mac: how to open it and read it](https://megakill.app/blog/activity-monitor-mac/): Opening Activity Monitor, reading CPU, memory, and energy columns, and using it to find and force-quit a runaway process.
+- [Why is my Mac running slow? How to free up RAM fast](https://megakill.app/blog/mac-running-slow-free-up-ram/): Common causes of a slow Mac, how memory pressure works, and how quitting heavy apps frees RAM.
+- [Force Quit Mac keyboard shortcut: the keys to know](https://megakill.app/blog/force-quit-mac-keyboard-shortcut/): The Cmd+Option+Esc shortcut and related key combos for force-quitting apps on macOS.
+
+## Guias (Espanol)
+
+- [Que hacer cuando una app no se cierra en Mac](https://megakill.app/blog/es/app-no-se-cierra-mac/): Por que las apps de Mac se congelan y no se cierran, y todas las formas de cerrarlas.
+- [Como forzar el cierre de una app desde el Dock en Mac](https://megakill.app/blog/es/forzar-cierre-app-dock-mac/): Usar el menu del Dock para forzar el cierre de una app que no responde, y el metodo escopeta de MEGAKILL.
+- [Forzar salida no funciona en Mac? Como matar cualquier app](https://megakill.app/blog/es/forzar-salida-no-funciona-mac/): Que hacer cuando el propio menu de forzar salida se queda bloqueado o falla.
+- [Como cerrar todas las apps en Mac](https://megakill.app/blog/es/cerrar-todas-las-apps-mac/): Todos los metodos para cerrar muchas o todas las apps abiertas a la vez en macOS.
+- [Monitor de Actividad en Mac: como abrirlo y leerlo](https://megakill.app/blog/es/monitor-de-actividad-mac/): Abrir el Monitor de Actividad, leer las columnas de CPU y memoria, y forzar el cierre de un proceso.
+- [Mi Mac va lento? Como liberar RAM rapido](https://megakill.app/blog/es/mac-va-lento-liberar-ram/): Causas habituales de un Mac lento y como cerrar apps pesadas para liberar memoria.
+- [Atajos de teclado para forzar el cierre en Mac](https://megakill.app/blog/es/atajos-forzar-cierre-mac/): El atajo Cmd+Opcion+Esc y otras combinaciones para forzar el cierre de apps en macOS.
+
+## Optional
+
+- [English blog hub](https://megakill.app/blog/): Index of all English MEGAKILL guides on force-quitting and Mac performance.
+- [Spanish blog hub](https://megakill.app/blog/es/): Index of all Spanish MEGAKILL guides.
