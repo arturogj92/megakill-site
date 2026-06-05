@@ -1465,6 +1465,26 @@ footer .brand b{font-size:16px}
     }catch(_){}
   }
 
+  // ---- cross-browser audio unlock: prime the sounds on the first user gesture ----
+  // Safari on Mac plays gesture audio loosely, but Chrome/Edge/Firefox (Windows) keep
+  // HTMLAudio + the AudioContext locked until a real gesture primes them. Without this,
+  // sound can work on a Mac yet stay silent on Windows. Runs once, on the first input.
+  let audioUnlocked = false;
+  function unlockAudio(){
+    if (audioUnlocked) return; audioUnlocked = true;
+    try { const c = actx || (actx = new (window.AudioContext||window.webkitAudioContext)()); if (c.state === 'suspended') c.resume(); } catch(_){ }
+    firePool.concat([reloadAudio]).forEach(a => {
+      try {
+        a.muted = true;
+        const p = a.play();
+        const done = () => { try { a.pause(); a.currentTime = 0; a.muted = false; } catch(_){ } };
+        if (p && p.then) p.then(done).catch(() => { a.muted = false; }); else done();
+      } catch(_){ a.muted = false; }
+    });
+  }
+  ['pointerdown','touchstart','keydown'].forEach(ev =>
+    window.addEventListener(ev, unlockAudio, { capture: true, passive: true }));
+
   // ---------- effects ----------
   // the app signals "out of ammo" only via the reload hint under the shells — no status panel
   function showReloadHint(on){ if(reloadHint) reloadHint.classList.toggle('empty', on); }
