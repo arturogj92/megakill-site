@@ -2134,5 +2134,20 @@ footer .brand b{font-size:16px}
   else init();
 })();
 </script>
+<script>
+/* Umami custom events: downloads, buy, demo play, scroll depth */
+(function(){
+  function t(n,d){ try{ if(window.umami){ d?window.umami.track(n,d):window.umami.track(n); } }catch(e){} }
+  function sect(el){ var s=el.closest('section'); return (s&&s.id)||'page'; }
+  document.querySelectorAll('a[href*="releases/latest/download"]').forEach(function(a){ a.addEventListener('click', function(){ t('download_click',{loc:sect(a)}); }); });
+  document.querySelectorAll('a[href*="gumroad"]').forEach(function(a){ a.addEventListener('click', function(){ t('buy_click',{loc:sect(a)}); }); });
+  var arena=document.getElementById('arena'), played=false, shots=0;
+  if(arena){ arena.addEventListener('pointerdown', function(){ shots++; if(!played){ played=true; t('demo_play'); } }, {passive:true}); }
+  var marks=[25,50,75,100], hit={};
+  function onScroll(){ var h=document.documentElement; var sh=h.scrollHeight-h.clientHeight; var st=h.scrollTop||document.body.scrollTop; var pct= sh>0 ? Math.round(st/sh*100) : 100; for(var i=0;i<marks.length;i++){ var m=marks[i]; if(pct>=m && !hit[m]){ hit[m]=1; t('scroll_'+m); } } }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  window.addEventListener('pagehide', function(){ if(shots>0) t('demo_shots',{count:shots}); }, {once:true});
+})();
+</script>
 </body>
 </html>
