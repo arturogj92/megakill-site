@@ -6,6 +6,13 @@
     <description>Most recent MEGAKILL updates</description>
     <language>en</language>
     <item>
+      <title>Version 0.1.5</title>
+      <description><![CDATA[<h2>MEGAKILL 0.1.5</h2><ul><li>New app icon</li></ul>]]></description>
+      <pubDate>Fri, 05 Jun 2026 15:46:38 +0200</pubDate>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/arturogj92/megakill-site/releases/download/v0.1.5/MEGAKILL-v0.1.5-macOS.zip" sparkle:version="6" sparkle:shortVersionString="0.1.5" length="2776403" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Version 0.1.4</title>
       <description><![CDATA[<h2>MEGAKILL 0.1.4</h2><ul><li>Fixed license activation (Gumroad now requires product_id)</li><li>Paste with Cmd-V now works in the license key field</li></ul>]]></description>
       <pubDate>Thu, 04 Jun 2026 22:53:36 +0200</pubDate>
