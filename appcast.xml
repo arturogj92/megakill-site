@@ -6,6 +6,13 @@
     <description>Most recent MEGAKILL updates</description>
     <language>en</language>
     <item>
+      <title>Version 0.1.7</title>
+      <description><![CDATA[<h2>MEGAKILL 0.1.7</h2><ul><li>Check for Updates now brings its window to the front (it was opening behind other apps)</li></ul>]]></description>
+      <pubDate>Fri, 05 Jun 2026 17:15:56 +0200</pubDate>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/arturogj92/megakill-site/releases/download/v0.1.7/MEGAKILL-v0.1.7-macOS.zip" sparkle:version="8" sparkle:shortVersionString="0.1.7" length="2302808" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Version 0.1.6</title>
       <description><![CDATA[<h2>MEGAKILL 0.1.6</h2><ul><li>New menu-bar skull icon</li><li>Sound effects on/off toggle in the menu</li><li>Shoot a pinned-but-closed app a second time to unpin it from the Dock</li></ul>]]></description>
       <pubDate>Fri, 05 Jun 2026 16:44:22 +0200</pubDate>
