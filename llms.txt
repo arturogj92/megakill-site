@@ -11,6 +11,7 @@ MEGAKILL turns force-quitting into a game. Instead of opening the Force Quit men
 
 ## Guides (English)
 
+- [Mac Frozen? How to Unfreeze a Stuck Screen and App](https://megakill.app/blog/mac-frozen/): Mac frozen and you cannot click anything? Tell a hung app from a locked Mac, force quit the stuck app with Option-Command-Escape, and force restart by holding the power button.
 - [Force Quit on Mac: Every Method](https://megakill.app/blog/force-quit-mac/): The complete guide to force quitting apps on Mac: ⌘Q, the Force Quit window (⌥⌘⎋), the Dock, Activity Monitor, and Terminal (killall, kill -9). When to use each.
 - [Chrome Won&#x27;t Quit on Mac? How to Force-Quit It](https://megakill.app/blog/chrome-wont-quit-mac/): Chrome won&#x27;t quit on your Mac? Quit every window, kill the leftover helper processes, then escalate: Force Quit window, Activity Monitor, and Terminal killall and kill -9.
 - [Excel Won&#x27;t Quit on Mac? How to Force It to Close](https://megakill.app/blog/excel-wont-quit-mac/): Excel won&#x27;t quit on your Mac? Save your workbook, force quit with ⌥⌘⎋, kill it from the Dock or Activity Monitor, and use killall in Terminal. Exact steps.
@@ -24,6 +25,7 @@ MEGAKILL turns force-quitting into a game. Instead of opening the Force Quit men
 
 ## Guias (Espanol)
 
+- [Mac congelado: cómo desbloquearlo y forzar el cierre o el reinicio](https://megakill.app/blog/es/mac-congelado/): ¿Tienes el Mac congelado y no puedes hacer clic en nada? Aprende a distinguir una app colgada del sistema entero bloqueado, a forzar el cierre y a reiniciar a la fuerza sin perder tu trabajo.
 - [Forzar cierre en Mac: todos los métodos paso a paso](https://megakill.app/blog/es/forzar-cierre-mac/): La guía completa para forzar el cierre en Mac: ⌘Q, la ventana ⌥⌘⎋, el Dock, el Monitor de Actividad y Terminal (killall, kill -9). Qué usar y cuándo.
 - [Chrome no se cierra en Mac: cómo forzar el cierre](https://megakill.app/blog/es/chrome-no-se-cierra-mac/): ¿Google Chrome no se cierra en Mac y se queda colgado? El culpable suele ser un proceso en segundo plano. Aquí tienes los pasos exactos, del Administrador de tareas de Chrome a Terminal.
 - [Excel no se cierra en Mac: cómo forzar la salida](https://megakill.app/blog/es/excel-no-se-cierra-mac/): ¿Excel no se cierra en Mac y se queda con la pelota de playa? Pasos concretos para Microsoft Excel, sus procesos en segundo plano y la escalera de soluciones de macOS.
