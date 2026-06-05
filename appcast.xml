@@ -6,6 +6,13 @@
     <description>Most recent MEGAKILL updates</description>
     <language>en</language>
     <item>
+      <title>Version 0.1.8</title>
+      <description><![CDATA[<h2>MEGAKILL 0.1.8</h2><ul><li>Shooting a closed-but-pinned Dock app now unpins it in one shot (no two-step)</li></ul>]]></description>
+      <pubDate>Fri, 05 Jun 2026 17:21:50 +0200</pubDate>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/arturogj92/megakill-site/releases/download/v0.1.8/MEGAKILL-v0.1.8-macOS.zip" sparkle:version="9" sparkle:shortVersionString="0.1.8" length="2302235" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Version 0.1.7</title>
       <description><![CDATA[<h2>MEGAKILL 0.1.7</h2><ul><li>Check for Updates now brings its window to the front (it was opening behind other apps)</li></ul>]]></description>
       <pubDate>Fri, 05 Jun 2026 17:15:56 +0200</pubDate>
