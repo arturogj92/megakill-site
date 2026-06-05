@@ -57,6 +57,14 @@ article strong{color:var(--fg)}
 article kbd{font-family:var(--font-pixel);font-size:.72em;background:var(--surface-2);border:1px solid var(--border-bright);
   border-bottom-width:2px;border-radius:5px;padding:3px 7px;color:var(--fg);white-space:nowrap}
 
+/* ---- inline demo video (MEGAKILL section) ---- */
+.post-demo{margin:22px 0;border:2px solid #000;background:#000;overflow:hidden;
+  box-shadow:0 5px 0 #000,inset 0 0 0 2px var(--blood-deep),0 0 30px rgba(207,23,23,.14)}
+.post-demo video{display:block;width:100%;height:auto}
+.post-demo figcaption{font-family:var(--font-pixel);font-size:8px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);text-align:center;padding:9px 10px;border-top:1px solid var(--border);
+  background:linear-gradient(180deg,var(--surface-2),var(--panel))}
+
 /* ---- in-article CTA box ---- */
 .cta-box{margin:34px 0;border:2px solid #000;background:
     radial-gradient(80% 120% at 50% 120%, rgba(255,122,24,.22), transparent 60%),
