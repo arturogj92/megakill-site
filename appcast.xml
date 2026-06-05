@@ -6,6 +6,13 @@
     <description>Most recent MEGAKILL updates</description>
     <language>en</language>
     <item>
+      <title>Version 0.1.10</title>
+      <description><![CDATA[<h2>MEGAKILL 0.1.10</h2><ul><li>First-run onboarding now plays a demo video</li><li>Onboarding explains Wound mode + Pinned cleanup</li></ul>]]></description>
+      <pubDate>Fri, 05 Jun 2026 18:15:31 +0200</pubDate>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/arturogj92/megakill-site/releases/download/v0.1.10/MEGAKILL-v0.1.10-macOS.zip" sparkle:version="11" sparkle:shortVersionString="0.1.10" length="5270825" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Version 0.1.9</title>
       <description><![CDATA[<h2>MEGAKILL 0.1.9</h2><ul><li>Launch at login (runs on boot, toggle in the menu)</li><li>Shoot floating pop-ups (like Outlook reminder alerts) to close them</li><li>New menu-bar icon + full-bleed app icon</li></ul>]]></description>
       <pubDate>Fri, 05 Jun 2026 17:48:42 +0200</pubDate>
