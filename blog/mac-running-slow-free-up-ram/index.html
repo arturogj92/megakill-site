@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Why Is My Mac Running Slow? How to Free Up RAM Fast · MEGAKILL</title>
+<meta name="description" content="If your Mac is running slow, the cause is usually RAM. Find the memory hogs, quit them, and get speed back without a reboot.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a0706">
+<link rel="canonical" href="https://megakill.app/blog/mac-running-slow-free-up-ram/">
+<link rel="alternate" hreflang="en" href="https://megakill.app/blog/mac-running-slow-free-up-ram/">
+<link rel="alternate" hreflang="es" href="https://megakill.app/blog/es/mac-va-lento-liberar-ram/">
+<link rel="alternate" hreflang="x-default" href="https://megakill.app/blog/mac-running-slow-free-up-ram/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Chakra+Petch:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MEGAKILL">
+<meta property="og:title" content="Why Is My Mac Running Slow? How to Free Up RAM Fast">
+<meta property="og:description" content="If your Mac is running slow, the cause is usually RAM. Find the memory hogs, quit them, and get speed back without a reboot.">
+<meta property="og:url" content="https://megakill.app/blog/mac-running-slow-free-up-ram/">
+<meta property="og:image" content="https://megakill.app/og-image.png">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Is My Mac Running Slow? How to Free Up RAM Fast">
+<meta name="twitter:description" content="If your Mac is running slow, the cause is usually RAM. Find the memory hogs, quit them, and get speed back without a reboot.">
+<meta name="twitter:image" content="https://megakill.app/og-image.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why Is My Mac Running Slow? How to Free Up RAM Fast", "description": "If your Mac is running slow, the cause is usually RAM. Find the memory hogs, quit them, and get speed back without a reboot.", "image": "https://megakill.app/og-image.png", "inLanguage": "en", "author": {"@type": "Organization", "name": "MEGAKILL"}, "publisher": {"@type": "Organization", "name": "MEGAKILL"}, "datePublished": "2026-06-05", "dateModified": "2026-06-05", "mainEntityOfPage": "https://megakill.app/blog/mac-running-slow-free-up-ram/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://megakill.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://megakill.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Why Is My Mac Running Slow? How to Free Up RAM Fast", "item": "https://megakill.app/blog/mac-running-slow-free-up-ram/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is my Mac suddenly running slow?", "acceptedAnswer": {"@type": "Answer", "text": "Most sudden slowdowns come from memory pressure: a browser or app eating RAM until macOS starts swapping to disk. Open Activity Monitor, check the Memory tab, and quit whatever is at the top of the list. A recent update reindexing Spotlight is the other common cause."}}, {"@type": "Question", "name": "Does freeing up RAM actually speed up a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, when memory pressure is yellow or red. Quitting apps that hog RAM lets macOS stop swapping to disk, which is the slow part. If pressure is green, free RAM will not help and the problem is elsewhere."}}, {"@type": "Question", "name": "Should I use a 'memory cleaner' app or Terminal purge?", "acceptedAnswer": {"@type": "Answer", "text": "Usually no. macOS manages memory well on its own, and most cleaner apps just force-purge cache that the system would have freed anyway. Quitting the actual memory hogs is more effective and free."}}, {"@type": "Question", "name": "How much free disk space should my Mac have?", "acceptedAnswer": {"@type": "Answer", "text": "Aim for at least 10 to 15% free on the startup disk. macOS uses spare space for swap and temporary files, so a nearly full drive makes everything sluggish. Check System Settings > General > Storage."}}]}</script>
+</head>
+<body>
+<header class="hud"><div class="bar"><a class="brand" href="/">MEGA<i>KILL</i></a><span class="spacer"></span><a class="cta" style="background:transparent;box-shadow:none;border:2px solid #5c4230;color:#bdac8a;margin-right:8px" href="https://megakill.app/blog/es/mac-va-lento-liberar-ram/">ES</a><a class="cta" href="https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip">Download free</a></div></header>
+<main class="wrap">
+<article>
+  <nav class="crumbs"><a href="/">Home</a> / <a href="https://megakill.app/blog/">Blog</a> / Why Is My Mac Running Slow? How to Free Up RAM Fast</nav>
+  <h1>Why Is My Mac Running Slow? How to Free Up RAM Fast</h1>
+  <div class="meta">macOS guide · Updated June 2026</div>
+  <p>Apps take a beat to switch. Typing lags behind the cursor. The fan spins up for no obvious reason. Nine times out of ten the culprit is RAM. Something is eating your memory until macOS starts shoving data onto the disk to cope, and that is the part that feels slow.</p><p>The good news is you can fix it in a couple of minutes without restarting. Here is how to find the memory hog and shut it down, with the exact keys and menus for current macOS (Sonoma and Sequoia).</p>
+  
+<h2>First, find out what is actually slowing it down</h2>
+<p>Do not guess. Open <strong>Activity Monitor</strong>: press <kbd>⌘Space</kbd>, type its name, and hit <kbd>Return</kbd>. Click the <strong>Memory</strong> tab at the top.</p><p>Look at the <strong>Memory Pressure</strong> graph along the bottom. That single graph tells you more than any other number on screen. Green means you have room to spare. Yellow means things are getting tight. Red means macOS is swapping memory out to disk to keep going, and that is almost certainly the slowdown you are feeling.</p><p>Now click the <strong>Memory</strong> column header to sort high to low. The apps at the top are the ones using the most RAM. While you are here, glance at the <strong>CPU</strong> tab too. A single process pinned at the top of CPU usage can drag the whole machine down the same way a memory hog does. If you want a fuller tour of what each tab means, we wrote a separate walkthrough on <a href="/blog/activity-monitor-mac/">how to open and read Activity Monitor on a Mac</a>.</p>
+<h2>How macOS memory really works</h2>
+<p>Before you panic at a near-full memory bar, know this: macOS keeps RAM full on purpose. It holds recently used files and app data in spare memory as cache, because empty RAM does nothing useful. Memory sitting idle is memory wasted. So seeing <strong>Memory Used</strong> close to your total is normal and healthy.</p><p>The numbers that actually matter are <strong>Memory Pressure</strong> and <strong>Swap Used</strong>, both at the bottom of the Memory tab. Pressure tells you whether the system is struggling to find room. Swap tells you how much it has already pushed onto the slow disk. A full memory bar with green pressure and zero swap means everything is fine. A full bar with red pressure and gigabytes of swap means you have a real problem worth fixing.</p>
+<h2>Free up RAM by quitting the heavy apps</h2>
+<p>Once you know which apps are at the top of that Memory column, the fix is blunt: quit them. The usual suspects are browsers with dozens of tabs open (Chrome is the classic offender), Electron apps like chat and note tools, and design software with big files loaded.</p><p>Quit properly with <kbd>⌘Q</kbd>. Closing a window with <kbd>⌘W</kbd> often leaves the app running in the background, still holding its RAM. If a browser is the hog, close the tabs you stopped reading an hour ago before you nuke the whole thing. When you want to clear several apps in one sweep, our guide on <a href="/blog/close-all-apps-mac/">how to close all apps on a Mac</a> covers the faster methods.</p><p>You may have read that you can run <kbd>purge</kbd> in Terminal to free inactive memory. Skip it. macOS reclaims that cache the instant another app needs it, so forcing a purge buys you nothing and can actually slow the next few seconds while the cache rebuilds. Quitting the real memory hog is the move that works.</p>
+<h2>Kill the worst offenders fast with MEGAKILL</h2>
+<p>Activity Monitor tells you exactly which apps are gorging on memory. Acting on that should not mean clicking a Stop button and confirming a dialog for each one. <strong>MEGAKILL</strong> turns it into a single click. Hold the shortcut (<kbd>⌥⌘</kbd> by default, and you can change it in the menu) and your cursor becomes a DOOM-style double-barrel shotgun. Click the hog's Dock icon or its window and it is force-quit on the spot. Right-click to reload, two shots per reload. Finder, the Dock, and critical system processes are shielded, so you cannot blast something that breaks your Mac. It runs on macOS 14 (Sonoma) or later and is free for your first 100 kills. If you would rather aim straight at the Dock, here is the slower manual version: <a href="/blog/force-quit-app-from-dock-mac/">force quitting from the Dock icon</a>.</p>
+<h2>Trim login items and background agents</h2>
+<p>Some of your RAM is gone before you even open an app, claimed by things that launch at boot. Open <strong>System Settings &gt; General &gt; Login Items</strong>. The top list is apps that start when you log in. Remove anything you do not need running from the moment you sit down.</p><p>Scroll to the section underneath, the background helpers with <strong>Allow in Background</strong> toggles. App updaters, cloud sync agents, and menu-bar extras pile up here over the years. Switch off the ones you do not recognize or do not use. Fewer startup items means more free RAM from your first login and a quicker boot too.</p>
+<h2>When it is not RAM: storage, indexing, and updates</h2>
+<p>If pressure is green and your Mac is still crawling, look elsewhere. A nearly full startup disk is a common one: macOS leans on free space for swap and temporary files, so keep at least 10 to 15% free. Check it under <strong>System Settings &gt; General &gt; Storage</strong>.</p><p>If the slowdown started right after a macOS update, Spotlight is probably reindexing your drive in the background. Give it an hour and it usually settles on its own. A pending update can also drag things, so install what is waiting in <strong>System Settings &gt; General &gt; Software Update</strong>. And when in doubt, restart. A reboot clears swap and caches and resolves a surprising amount on its own. If a frozen app is blocking your restart or refusing to die, our notes on <a href="/blog/force-quit-mac-not-working/">what to do when force quit itself fails</a> will get you unstuck.</p>
+  
+  <div class="cta-box">
+    <h3>Reclaim your RAM by force</h3>
+    <p>Found the memory hog? Blast it with the shotgun and get your speed back. Free for your first 100 kills.</p>
+    <a class="btn" href="https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip">Download MEGAKILL (free)</a>
+  </div>
+
+  <section class="faq">
+    <h2>Frequently asked questions</h2>
+  <details><summary>Why is my Mac suddenly running slow?</summary><p>Most sudden slowdowns come from memory pressure: a browser or app eating RAM until macOS starts swapping to disk. Open Activity Monitor, check the Memory tab, and quit whatever is at the top of the list. A recent update reindexing Spotlight is the other common cause.</p></details>
+  <details><summary>Does freeing up RAM actually speed up a Mac?</summary><p>Yes, when memory pressure is yellow or red. Quitting apps that hog RAM lets macOS stop swapping to disk, which is the slow part. If pressure is green, free RAM will not help and the problem is elsewhere.</p></details>
+  <details><summary>Should I use a &#x27;memory cleaner&#x27; app or Terminal purge?</summary><p>Usually no. macOS manages memory well on its own, and most cleaner apps just force-purge cache that the system would have freed anyway. Quitting the actual memory hogs is more effective and free.</p></details>
+  <details><summary>How much free disk space should my Mac have?</summary><p>Aim for at least 10 to 15% free on the startup disk. macOS uses spare space for swap and temporary files, so a nearly full drive makes everything sluggish. Check System Settings &gt; General &gt; Storage.</p></details>
+  </section>
+</article>
+</main>
+<footer><div class="wrap"><p class="small">MEGAKILL is a macOS menu-bar app that force-quits apps by shooting them. A loving tribute to DOOM (1993, id Software); not affiliated with id Software or ZeniMax.</p><div><a href="/">megakill.app</a> &nbsp;·&nbsp; <a href="/blog/">Blog</a></div></div></footer>
+</body>
+</html>
