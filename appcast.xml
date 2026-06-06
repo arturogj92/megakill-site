@@ -6,6 +6,13 @@
     <description>Most recent MEGAKILL updates</description>
     <language>en</language>
     <item>
+      <title>Version 0.1.11</title>
+      <description><![CDATA[Fix shotgun cursor not redrawing after sleep or wake]]></description>
+      <pubDate>Sat, 06 Jun 2026 12:10:27 +0200</pubDate>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/arturogj92/megakill-site/releases/download/v0.1.11/MEGAKILL-v0.1.11-macOS.zip" sparkle:version="12" sparkle:shortVersionString="0.1.11" length="5271673" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Version 0.1.10</title>
       <description><![CDATA[<h2>MEGAKILL 0.1.10</h2><ul><li>First-run onboarding now plays a demo video</li><li>Onboarding explains Wound mode + Pinned cleanup</li></ul>]]></description>
       <pubDate>Fri, 05 Jun 2026 18:15:31 +0200</pubDate>
