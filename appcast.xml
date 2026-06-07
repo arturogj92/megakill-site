@@ -6,6 +6,13 @@
     <description>Most recent MEGAKILL updates</description>
     <language>en</language>
     <item>
+      <title>Version 0.1.13</title>
+      <description><![CDATA[The shotgun now draws empty and auto-reloads in view every time you pull it out, so you see the full load-up before the first shot. Fire too early and it dry-fires.]]></description>
+      <pubDate>Sun, 07 Jun 2026 18:06:24 +0200</pubDate>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/arturogj92/megakill-site/releases/download/v0.1.13/MEGAKILL-v0.1.13-macOS.zip" sparkle:version="14" sparkle:shortVersionString="0.1.13" length="5273026" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Version 0.1.12</title>
       <description><![CDATA[Fixes the shotgun cursor not rendering after you maximize a window into fullscreen and then exit it. The overlay now rebuilds on Space changes too, the same way it already did after the display sleeps.]]></description>
       <pubDate>Sun, 07 Jun 2026 16:52:41 +0200</pubDate>
