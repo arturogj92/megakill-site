@@ -6,6 +6,13 @@
     <description>Most recent MEGAKILL updates</description>
     <language>en</language>
     <item>
+      <title>Version 0.1.12</title>
+      <description><![CDATA[Fixes the shotgun cursor not rendering after you maximize a window into fullscreen and then exit it. The overlay now rebuilds on Space changes too, the same way it already did after the display sleeps.]]></description>
+      <pubDate>Sun, 07 Jun 2026 16:52:41 +0200</pubDate>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/arturogj92/megakill-site/releases/download/v0.1.12/MEGAKILL-v0.1.12-macOS.zip" sparkle:version="13" sparkle:shortVersionString="0.1.12" length="5270750" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Version 0.1.11</title>
       <description><![CDATA[Fix shotgun cursor not redrawing after sleep or wake]]></description>
       <pubDate>Sat, 06 Jun 2026 12:10:27 +0200</pubDate>
